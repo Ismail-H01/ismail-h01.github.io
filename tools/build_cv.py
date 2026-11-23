@@ -30,10 +30,10 @@ CONTACT = (
     "&nbsp;|&nbsp; ismail-h01.github.io &nbsp;|&nbsp; West Midlands, UK"
 )
 PROFILE = (
-    "Electrical and electronic engineer with a First Class BEng (Hons) from Aston University and a "
-    "year of industrial placement at Renishaw. Experience across PCB design, power electronics, "
-    "embedded firmware and qualification testing. Member of the IET (MIET). Currently working in "
-    "highway and street lighting design at Amey Consulting."
+    "Graduate Electrical Engineer at Amey Consulting with a First Class BEng (Hons) in Electrical and "
+    "Electronic Engineering from Aston University and a year of industrial placement at Renishaw. "
+    "Experience across infrastructure lighting design, electronics and product development, taking work "
+    "from first concept through design and testing to delivery and production. Member of the IET (MIET)."
 )
 EDUCATION = [
     (
@@ -46,11 +46,15 @@ EDUCATION = [
 EXPERIENCE = [
     (
         "Amey Consulting",
-        "Highway and street lighting design",
-        "2026 to present",
+        "Graduate Electrical Engineer, highway lighting design",
+        "Sep 2026 to present",
         [
-            "Produces photometric calculations in Lighting Reality and lighting layout drawings in AutoCAD.",
-            "Applies BS 5489-1 and BS EN 13201 to highway and street lighting schemes.",
+            "Owns client lighting proposals from brief to final deliverable, acting as the point of contact for "
+            "client queries, for upgrades, new column installations and new developments.",
+            "Assigns M, C or P lighting classes using BS 5489-1 and designs in Lighting Reality to meet BS EN 13201-2; "
+            "produces AutoCAD drawings on Ordnance Survey mapping with every column placed at exact coordinates.",
+            "Reviews statutory utility records (overhead lines, BT, HV and LV cables, water and gas mains) so designs "
+            "are safe to build; works on Section 278 and Section 38 developer schemes (Highways Act 1980).",
         ],
     ),
     (
@@ -91,8 +95,9 @@ PROJECTS = [
 ]
 LEADERSHIP = [
     "<b>Mentor</b>, Graduate Engineering Engagement Programme (GEEP), Royal Academy of Engineering.",
-    "<b>School Rep</b> (Engineering and Physical Sciences) and <b>Student Rep</b> (Electrical and "
-    "Electronic Engineering), Aston University.",
+    "<b>School Rep</b>, School of Engineering and Physical Sciences, Aston University: represented students "
+    "from every course in the school in meetings with academic staff and faculty leadership, from day-to-day "
+    "course concerns to serious matters. Also <b>Student Rep</b> for Electrical and Electronic Engineering.",
     "<b>STEM Ambassador</b>, Renishaw: engineering demonstrations and careers talks for visiting school groups.",
     "<b>Early Careers Network Challenge</b>, Renishaw: placed 2nd of 8 teams; designed the engagement "
     "survey and presented the events plan to a judging panel.",
@@ -102,7 +107,7 @@ SKILLS = [
     ("Simulation", "MATLAB/Simulink, LTspice, Lighting Reality"),
     ("Embedded", "C/C++, ESP-IDF, FreeRTOS, SoftConsole and Libero, Matter"),
     ("Lab and test", "ESD testing, PCB debugging, advanced soldering (0402), oscilloscope measurement"),
-    ("Standards and tools", "BS 5489-1, BS EN 13201, Git"),
+    ("Standards and tools", "BS 5489-1, BS EN 13201, Highways Act 1980 (S38 and S278), Git"),
 ]
 TRAINING = (
     "Renishaw soldering training (basic 12 h, advanced 24 h); Zuken CR-8000 on-site training; "
@@ -148,7 +153,7 @@ def build():
     for title, when, pts in PROJECTS:
         s += [Paragraph(f"<b>{title}</b> &nbsp;|&nbsp; <i>{when}</i>", role_s)] + bullets(pts) + [Spacer(1, 2)]
 
-    s += heading("Leadership and community") + bullets(LEADERSHIP)
+    s += heading("Leadership and outreach") + bullets(LEADERSHIP)
 
     skills = []
     for k, v in SKILLS:

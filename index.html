@@ -1,607 +1,560 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-GB" data-theme="dark" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ismail Hussain | Electrical and Electronic Engineer</title>
-<meta name="description" content="Portfolio of Ismail Hussain, MIET, BEng Electrical and Electronic Engineering (Aston University). Power electronics, embedded systems and PCB design.">
+<meta name="description" content="Ismail Hussain, electrical and electronic engineer (First Class BEng (Hons), MIET). Power electronics, embedded systems and PCB design: projects, experience and contact details.">
+<meta name="author" content="Ismail Hussain">
 <meta name="theme-color" content="#0a1120">
-<meta property="og:title" content="Ismail Hussain | Electrical and Electronic Engineer">
-<meta property="og:description" content="Power electronics, embedded systems and PCB design. Selected projects and write-ups.">
+<link rel="canonical" href="https://ismail-h01.github.io/">
+
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a1120'/%3E%3Cpath d='M14 40h14l6-16h16' fill='none' stroke='%232dd4bf' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='50' cy='24' r='5' fill='%232dd4bf'/%3E%3C/svg%3E">
-<style>
-  :root{
-    --bg:#0a1120;
-    --bg-2:#0e172b;
-    --surface:#111c33;
-    --surface-2:#16233f;
-    --line:rgba(148,172,214,.16);
-    --text:#e8eefb;
-    --muted:#9fb0cf;
-    --accent:#2dd4bf;
-    --accent-2:#5eead4;
-    --warm:#f5b95f;
-    --radius:18px;
-    --ease:cubic-bezier(.2,.7,.2,1);
-    --font:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-padding-top:84px}
-  body{
-    background:var(--bg);color:var(--text);font-family:var(--font);
-    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
-  }
-  img{max-width:100%;display:block}
-  a{color:inherit}
-  ::selection{background:var(--accent);color:#04201c}
-  :focus-visible{outline:2px solid var(--accent-2);outline-offset:3px;border-radius:6px}
+<meta property="og:site_name" content="Ismail Hussain">
+<meta property="og:title" content="Ismail Hussain | Electrical and Electronic Engineer">
+<meta property="og:description" content="First Class BEng (Hons), MIET. Power electronics, embedded systems and PCB design. Projects, experience and contact details.">
+<meta property="og:url" content="https://ismail-h01.github.io/">
+<meta property="og:image" content="https://ismail-h01.github.io/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ismail Hussain, Electrical and Electronic Engineer. First Class BEng (Hons), MIET.">
+<meta name="twitter:card" content="summary_large_image">
 
-  /* progress + nav */
-  .progress{position:fixed;inset:0 auto auto 0;height:3px;width:100%;transform-origin:left;transform:scaleX(0);
-    background:linear-gradient(90deg,var(--accent),var(--warm));z-index:60}
-  nav{
-    position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;
-    padding:14px clamp(18px,4vw,48px);transition:background .35s,backdrop-filter .35s,border-color .35s;
-    border-bottom:1px solid transparent;
-  }
-  nav.scrolled{background:rgba(10,17,32,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
-  .brand{font-weight:700;letter-spacing:.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
-  .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(45,212,191,.6);animation:ping 2.4s infinite}
-  @keyframes ping{70%{box-shadow:0 0 0 10px rgba(45,212,191,0)}100%{box-shadow:0 0 0 0 rgba(45,212,191,0)}}
-  .links{display:flex;gap:6px;list-style:none}
-  .links a{
-    text-decoration:none;font-size:.92rem;color:var(--muted);padding:8px 14px;border-radius:999px;transition:color .2s,background .2s;
-  }
-  .links a:hover{color:var(--text);background:rgba(148,172,214,.1)}
-  .links a.active{color:#04201c;background:var(--accent)}
-
-  /* layout */
-  section{padding:clamp(72px,11vw,140px) clamp(18px,5vw,64px);position:relative}
-  .wrap{max-width:1120px;margin:0 auto}
-  .eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px;margin-bottom:18px}
-  .eyebrow::before{content:"";width:34px;height:1px;background:var(--accent)}
-  h2{font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
-  .lead{color:var(--muted);max-width:640px;font-size:1.06rem}
-
-  /* hero */
-  .hero{min-height:100svh;display:flex;align-items:center;overflow:hidden;padding:110px clamp(18px,5vw,64px) 90px}
-  #traces{position:absolute;inset:0;width:100%;height:100%;z-index:0}
-  .hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
-    background:radial-gradient(60% 55% at 28% 48%,rgba(10,17,32,.0) 0%,rgba(10,17,32,.45) 60%,rgba(10,17,32,.8) 100%),
-               linear-gradient(180deg,transparent 70%,var(--bg))}
-  .hero .wrap{position:relative;z-index:2;width:100%}
-  .badge{display:inline-flex;align-items:center;gap:10px;font-size:.84rem;color:var(--muted);
-    border:1px solid var(--line);background:rgba(17,28,51,.6);backdrop-filter:blur(8px);padding:7px 14px;border-radius:999px;margin-bottom:26px}
-  .badge b{color:var(--accent-2);font-weight:600}
-  h1{font-size:clamp(2.8rem,8.6vw,6.2rem);line-height:1.02;letter-spacing:-.035em;font-weight:800;margin-bottom:22px}
-  h1 .grad{background:linear-gradient(100deg,var(--accent-2),var(--accent) 45%,var(--warm));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .role{font-size:clamp(1.1rem,2.3vw,1.5rem);color:var(--muted);min-height:2.1em;max-width:720px}
-  .role strong{color:var(--text);font-weight:600;border-bottom:2px solid var(--accent);padding-bottom:1px}
-  .caret{display:inline-block;width:2px;height:1.05em;background:var(--accent);margin-left:3px;vertical-align:-.15em;animation:blink 1s steps(2) infinite}
-  @keyframes blink{50%{opacity:0}}
-  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
-  .btn{
-    display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;font-size:.97rem;cursor:pointer;
-    padding:13px 22px;border-radius:999px;border:1px solid var(--line);background:rgba(17,28,51,.7);color:var(--text);
-    transition:transform .25s var(--ease),background .25s,border-color .25s,box-shadow .25s;font-family:inherit
-  }
-  .btn:hover{transform:translateY(-2px);border-color:rgba(45,212,191,.5);background:var(--surface-2)}
-  .btn.primary{background:var(--accent);color:#04201c;border-color:var(--accent)}
-  .btn.primary:hover{background:var(--accent-2);box-shadow:0 10px 30px -10px rgba(45,212,191,.7)}
-  .btn svg{width:18px;height:18px;flex:none}
-  .scroll-hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:2;color:var(--muted);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px}
-  .scroll-hint i{width:1px;height:38px;background:linear-gradient(var(--accent),transparent);animation:drop 2s infinite}
-  @keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
-
-  /* stats */
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:-40px;position:relative;z-index:3}
-  .stat{background:var(--bg-2);padding:30px 26px}
-  .stat .n{font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:800;letter-spacing:-.02em;color:var(--text);font-variant-numeric:tabular-nums}
-  .stat .n em{font-style:normal;color:var(--accent)}
-  .stat p{color:var(--muted);font-size:.9rem;margin-top:4px;line-height:1.45}
-  .stats-wrap{padding:0 clamp(18px,5vw,64px)}
-
-  /* about */
-  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,6vw,80px);align-items:start;margin-top:30px}
-  .about p{color:var(--muted);font-size:1.06rem}
-  .about p + p{margin-top:16px}
-  .about p b{color:var(--text);font-weight:600}
-  .chips{display:flex;flex-wrap:wrap;gap:8px}
-  .chip{font-size:.84rem;padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);transition:all .25s var(--ease)}
-  .chip:hover{color:var(--text);border-color:rgba(45,212,191,.5);transform:translateY(-2px)}
-  .skill-group + .skill-group{margin-top:22px}
-  .skill-group h3{font-size:.78rem;font-family:var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--text);margin-bottom:12px;font-weight:500}
-
-  /* projects */
-  .projects{display:grid;gap:28px;margin-top:46px}
-  .card{
-    --mx:50%;--my:50%;
-    position:relative;border-radius:calc(var(--radius) + 4px);border:1px solid var(--line);
-    background:linear-gradient(180deg,var(--surface),var(--bg-2));overflow:hidden;
-    transition:border-color .3s,transform .4s var(--ease);
-  }
-  .card::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;
-    background:radial-gradient(520px circle at var(--mx) var(--my),rgba(45,212,191,.11),transparent 60%)}
-  .card:hover{border-color:rgba(45,212,191,.35)}
-  .card:hover::before{opacity:1}
-  .card-body{padding:clamp(24px,4vw,44px);position:relative}
-  .card-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;flex-wrap:wrap}
-  .num{font-family:var(--mono);font-size:.82rem;color:var(--accent);letter-spacing:.14em}
-  .period{font-family:var(--mono);font-size:.8rem;color:var(--muted);border:1px solid var(--line);padding:5px 12px;border-radius:999px}
-  .card h3{font-size:clamp(1.45rem,3vw,2.15rem);line-height:1.2;letter-spacing:-.02em;margin:14px 0 6px}
-  .card .sub{color:var(--warm);font-size:.95rem;font-weight:500;margin-bottom:16px}
-  .card .summary{color:var(--muted);max-width:760px;font-size:1.04rem}
-  .points{list-style:none;margin:26px 0 8px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px 34px}
-  .points li{position:relative;padding-left:26px;color:#c7d3ec;font-size:.97rem;line-height:1.55}
-  .points li::before{content:"";position:absolute;left:0;top:.55em;width:14px;height:2px;background:var(--accent);box-shadow:0 0 12px var(--accent)}
-  .points li b{color:var(--text);font-weight:600}
-  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-  .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-  .toggle .chev{transition:transform .35s var(--ease)}
-  .toggle[aria-expanded="true"] .chev{transform:rotate(180deg)}
-  .toggle[aria-expanded="true"]{border-color:rgba(45,212,191,.55);background:var(--surface-2)}
-
-  /* dropdown gallery */
-  .drop{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
-  .drop.open{grid-template-rows:1fr}
-  .drop > div{overflow:hidden}
-  .drop-inner{padding:0 clamp(24px,4vw,44px) clamp(24px,4vw,44px);display:grid;gap:18px;opacity:0;transform:translateY(14px);transition:opacity .5s .1s,transform .6s .1s var(--ease)}
-  .drop.open .drop-inner{opacity:1;transform:none}
-  .gallery{display:grid;gap:16px;grid-template-columns:1fr}
-  .gallery.split{grid-template-columns:minmax(240px,470px) 1fr;gap:clamp(20px,4vw,44px);align-items:center}
-  .legend{list-style:none;display:grid;gap:14px;counter-reset:l}
-  .legend li{counter-increment:l;display:grid;grid-template-columns:34px 1fr;gap:4px 14px;align-items:start;color:#c7d3ec;font-size:.96rem;line-height:1.5}
-  .legend li::before{content:counter(l);font-family:var(--mono);font-size:.78rem;color:var(--accent);border:1px solid rgba(45,212,191,.4);border-radius:50%;width:30px;height:30px;display:grid;place-items:center}
-  .legend b{color:var(--text);font-weight:600;display:block}
-  .legend h4{font-size:.78rem;font-family:var(--mono);letter-spacing:.16em;text-transform:uppercase;font-weight:500;color:var(--text);margin-bottom:4px}
-  .shot{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#050912;cursor:zoom-in;position:relative}
-  .shot img{width:100%;height:auto;transition:transform .6s var(--ease)}
-  .shot:hover img{transform:scale(1.035)}
-  .shot figcaption{padding:12px 16px;font-size:.88rem;color:var(--muted);border-top:1px solid var(--line);background:var(--surface)}
-  .note{font-size:.88rem;color:var(--muted);border-left:2px solid var(--warm);padding-left:14px}
-
-  /* contact */
-  .contact{padding-top:clamp(40px,6vw,80px);text-align:center;background:radial-gradient(60% 80% at 50% 100%,rgba(45,212,191,.12),transparent 70%)}
-  .contact .eyebrow{justify-content:center}
-  .contact .eyebrow::before{display:none}
-  .contact h2{font-size:clamp(2.2rem,6vw,4rem)}
-  .contact .lead{margin:0 auto}
-  .contact .cta{justify-content:center}
-  footer{padding:30px clamp(18px,5vw,64px);border-top:1px solid var(--line);color:var(--muted);font-size:.86rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-
-  /* lightbox */
-  .lb{position:fixed;inset:0;z-index:100;background:rgba(4,8,18,.92);backdrop-filter:blur(8px);display:grid;place-items:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .3s}
-  .lb.open{opacity:1;pointer-events:auto}
-  .lb img{max-height:86vh;max-width:min(94vw,1100px);border-radius:12px;transform:scale(.96);transition:transform .35s var(--ease)}
-  .lb.open img{transform:none}
-  .lb button{position:absolute;top:18px;right:20px;background:var(--surface);color:var(--text);border:1px solid var(--line);width:44px;height:44px;border-radius:50%;font-size:1.3rem;cursor:pointer}
-  .lb p{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:var(--muted);font-size:.9rem;padding:0 20px}
-
-  /* reveal */
-  .reveal{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
-  .reveal.in{opacity:1;transform:none}
-  .hero .reveal{transform:translateY(22px)}
-
-  @media (max-width:860px){
-    .gallery.split{grid-template-columns:1fr}
-    .links li:not(:last-child){display:none}
-    .stats{grid-template-columns:repeat(2,1fr);margin-top:-20px}
-    .about-grid{grid-template-columns:1fr}
-    .points{grid-template-columns:1fr}
-  }
-  @media (max-width:520px){
-    .stat{padding:22px 18px}
-    .stat .n{font-size:1.7rem}
-    .stat .n em{font-size:.62em}
-    .stat .n{white-space:nowrap}
-    .btn{padding:12px 18px}
-  }
-  @media (prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto}
-    *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;transition-delay:0s!important}
-    .reveal{opacity:1;transform:none}
-  }
-</style>
-</head>
-<body>
-<div class="progress" id="progress"></div>
-
-<nav id="nav">
-  <a class="brand" href="#top"><span class="dot"></span>Ismail Hussain</a>
-  <ul class="links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<header class="hero" id="top">
-  <canvas id="traces" aria-hidden="true"></canvas>
-  <div class="wrap">
-    <div class="badge reveal"><b>MIET</b> &nbsp;|&nbsp; BEng Electrical and Electronic Engineering, Aston University</div>
-    <h1 class="reveal" style="--d:.08s">Ismail<br><span class="grad">Hussain</span></h1>
-    <p class="role reveal" style="--d:.16s">Electrical engineer focused on <strong id="word">power electronics</strong><span class="caret"></span></p>
-    <div class="cta reveal" style="--d:.24s">
-      <a class="btn primary" href="#projects">View projects
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
-      <a class="btn" href="https://www.linkedin.com/in/ismail-hussain22/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11.5H3V9.75zm6.5 0h3.83v1.57h.06c.53-1 1.84-2.07 3.78-2.07 4.04 0 4.78 2.66 4.78 6.12v5.88h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75v5.29h-4V9.75z"/></svg>LinkedIn</a>
-      <a class="btn" href="#contact" data-mail>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
-    </div>
-  </div>
-  <div class="scroll-hint"><span>Scroll</span><i></i></div>
-</header>
-
-<div class="stats-wrap">
-  <div class="wrap">
-    <div class="stats reveal">
-      <div class="stat"><div class="n"><span data-count="92">92</span></div><p>tests in the final year project validation plan</p></div>
-      <div class="stat"><div class="n"><em>&plusmn;</em><span data-count="12">12</span><em> kV</em></div><p>ESD contact discharge sweep on placement</p></div>
-      <div class="stat"><div class="n"><span data-count="30">30</span><em> V</em></div><p>gate drive swing, +15 V to &minus;15 V, measured</p></div>
-      <div class="stat"><div class="n"><span data-count="12">12</span><em> months</em></div><p>industrial placement at Renishaw, 2024 to 2025</p></div>
-    </div>
-  </div>
-</div>
-
-<section id="about" class="about">
-  <div class="wrap">
-    <div class="eyebrow reveal">About</div>
-    <h2 class="reveal" style="--d:.06s">Hardware that gets built, tested and measured.</h2>
-    <div class="about-grid">
-      <div class="reveal" style="--d:.12s">
-        <p>I am an <b>electrical and electronic engineer</b> and a Member of the IET. My work spans power electronics, embedded firmware and PCB design, from schematic and layout through to soldering, bring-up and test.</p>
-        <p>The projects below cover an isolated gate drive for a three-phase converter, a smart-home controller built on the Matter standard, and a year of industrial placement in a professional electronics design team.</p>
-      </div>
-      <div class="reveal" style="--d:.2s">
-        <div class="skill-group">
-          <h3>Design and CAD</h3>
-          <div class="chips"><span class="chip">Zuken CR-8000</span><span class="chip">Altium Designer</span><span class="chip">Proteus</span><span class="chip">Fusion 360</span></div>
-        </div>
-        <div class="skill-group">
-          <h3>Simulation and embedded</h3>
-          <div class="chips"><span class="chip">MATLAB / Simulink</span><span class="chip">LTspice</span><span class="chip">C / C++</span><span class="chip">ESP-IDF</span><span class="chip">FreeRTOS</span><span class="chip">SoftConsole / Libero</span></div>
-        </div>
-        <div class="skill-group">
-          <h3>Lab and build</h3>
-          <div class="chips"><span class="chip">Advanced soldering (0402)</span><span class="chip">ESD testing</span><span class="chip">PCB debugging</span><span class="chip">Git</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="projects" style="padding-top:20px">
-  <div class="wrap">
-    <div class="eyebrow reveal">Selected work</div>
-    <h2 class="reveal" style="--d:.06s">Projects</h2>
-    <p class="lead reveal" style="--d:.12s">Short summaries of each project. Open the photos on any card to see the hardware.</p>
-
-    <div class="projects">
-
-      <!-- 01 FYP -->
-      <article class="card reveal">
-        <div class="card-body">
-          <div class="card-top"><span class="num">01</span><span class="period">Sep 2025 to Apr 2026</span></div>
-          <h3>MACCS+: Matter-enabled curtain and lighting controller</h3>
-          <div class="sub">Final year project, BEng Electrical and Electronic Engineering</div>
-          <p class="summary">A self-designed smart curtain and LED lighting controller that joins a smart home through the Matter standard. It is controllable by voice, a web page, physical buttons or a schedule, and the buttons keep working with no network.</p>
-          <ul class="points">
-            <li><b>Custom power PCB</b> with reverse polarity protection, hardware soft start, polyfuses, a TVS diode and a 12 V to 5 V buck stage. The 5 V rail held 5.02 V under full load.</li>
-            <li><b>Firmware</b> in C and C++ on an ESP32-C6 using ESP-IDF and FreeRTOS, with limit switch interrupts, a stall timeout and saved position across power cycles.</li>
-            <li><b>Matter control</b> commissioned into Apple Home over Bluetooth LE, including Siri voice commands. Five control paths run at once without conflict.</li>
-            <li><b>Mechanical design</b> in Fusion 360: a belt-driven, centre-opening mechanism with 3D printed parts, including a sacrificial part that protects the assembly on overrun.</li>
-            <li><b>Validation:</b> 92 tests, with 83 passed, 7 partial and 2 failed. The failures are reported openly, including Alexa not discovering the device.</li>
-            <li><b>Debugging:</b> a limit switch feedback loop in the Matter delegate was traced to a command being written from a status callback, and fixed.</li>
-          </ul>
-          <div class="meta"><span class="chip">ESP32-C6</span><span class="chip">Matter</span><span class="chip">FreeRTOS</span><span class="chip">PCB design</span><span class="chip">Fusion 360</span></div>
-          <div class="actions">
-            <button class="btn toggle" aria-expanded="false" aria-controls="drop-fyp">View photos
-              <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
-          </div>
-        </div>
-        <div class="drop" id="drop-fyp"><div><div class="drop-inner">
-          <div class="gallery split">
-            <figure class="shot tall" data-full="fyp-full.jpg" data-cap="MACCS+ assembled: custom power PCB, ESP32-C6, motor driver and geared motor in the printed housing, with the button panel in front">
-              <img src="fyp-full.jpg" alt="MACCS+ controller assembled in a 3D printed housing, showing the custom green power PCB with an ESP32-C6, a geared motor with belt pulley, and the five-button panel" loading="lazy">
-              <figcaption>Assembled controller, open housing</figcaption>
-            </figure>
-            <div>
-              <h4 class="legend-h" style="font-size:.78rem;font-family:var(--mono);letter-spacing:.16em;text-transform:uppercase;font-weight:500;margin-bottom:16px">What is in the photo</h4>
-              <ol class="legend">
-                <li><span><b>Custom power PCB</b>Holds the ESP32-C6 board, with protection and the 12 V to 5 V buck stage. Etched and soldered by hand.</span></li>
-                <li><span><b>Motor driver</b>The red H-bridge module that switches the motor direction and speed.</span></li>
-                <li><span><b>Geared motor and belt pulley</b>Drives the belt that moves the curtain carriages.</span></li>
-                <li><span><b>3D printed housing</b>Designed in Fusion 360 and screwed onto the aluminium rail.</span></li>
-                <li><span><b>Button panel</b>Five physical buttons that work without Wi-Fi.</span></li>
-              </ol>
-            </div>
-          </div>
-        </div></div></div>
-      </article>
-
-      <!-- 02 EE3PEC -->
-      <article class="card reveal">
-        <div class="card-body">
-          <div class="card-top"><span class="num">02</span><span class="period">Autumn 2025</span></div>
-          <h3>Three-phase AC-DC-AC converter and isolated gate drive</h3>
-          <div class="sub">EE3PEC power electronics paper, Aston University</div>
-          <p class="summary">A Simulink model of a rectifier and three-phase inverter, paired with a gate drive circuit that was designed, built and tested on the bench. Measured waveforms were compared against the simulation to validate the design.</p>
-          <ul class="points">
-            <li><b>Model:</b> single-phase then three-phase rectifier feeding a voltage-source inverter and a 20 kW balanced load, at a 50 Hz fundamental, modulation index 0.8, 750 Hz switching and 10 &micro;s dead-time.</li>
-            <li><b>Gate drive PCB</b> with galvanic isolation between the controller logic and the power stage, and matched tracks on both channels to keep signal delay equal.</li>
-            <li><b>Control:</b> PWM with dead-time generated on a Microsemi SmartFusion board, programmed with Libero and SoftConsole.</li>
-            <li><b>Results:</b> the gate drive swung between +15 V and &minus;15 V, about 30 V, with dead-time of about 8 &micro;s measured on the oscilloscope.</li>
-            <li><b>Debugging:</b> a transistor pin-out mismatch between the datasheet and the schematic library was caught during soldering, before power-up.</li>
-          </ul>
-          <div class="meta"><span class="chip">MATLAB / Simulink</span><span class="chip">Proteus</span><span class="chip">Gate drive</span><span class="chip">FPGA PWM</span></div>
-          <div class="actions">
-            <a class="btn primary" href="EE3PEC-Ismail-Hussain.pdf" target="_blank" rel="noopener">Read the paper (PDF)
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-            <button class="btn toggle" aria-expanded="false" aria-controls="drop-pec">View the PCB
-              <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
-          </div>
-        </div>
-        <div class="drop" id="drop-pec"><div><div class="drop-inner">
-          <div class="gallery">
-            <figure class="shot" data-full="gate-drive-pcb.jpg" data-cap="Built and tested two-channel isolated gate drive PCB">
-              <img src="gate-drive-pcb.jpg" alt="Built two-channel isolated gate drive PCB with optocouplers, screw terminals and twisted-pair leads, photographed on a dark wooden surface" loading="lazy">
-              <figcaption>The built two-channel isolated gate drive board</figcaption>
-            </figure>
-          </div>
-        </div></div></div>
-      </article>
-
-      <!-- 03 Renishaw -->
-      <article class="card reveal">
-        <div class="card-body">
-          <div class="card-top"><span class="num">03</span><span class="period">2024 to 2025</span></div>
-          <h3>Electronics placement at Renishaw</h3>
-          <div class="sub">Industrial placement, Encoder Product Division</div>
-          <p class="summary">A year inside a professional electronics design team, working on PCB design, test planning and qualification testing for precision encoder products. This summary covers what I did at a general level only.</p>
-          <ul class="points">
-            <li><b>Test jig PCB redesigned from scratch</b> in Zuken CR-8000, working from legacy documentation. Obsolete parts were replaced and the board was made to fit the existing jig. It reached the board testing stage before the placement ended.</li>
-            <li><b>ESD qualification:</b> a self-directed contact discharge sweep up to &plusmn;12 kV on a replacement protection device, with a risk assessment completed first. I presented the findings to senior engineers, and the report was approved for production.</li>
-            <li><b>Protection investigation:</b> structured pulse testing, including at elevated temperature, to assess whether a protection component was needed. The results were reviewed and signed off by stakeholders.</li>
-            <li><b>Other work:</b> a PCB for a project at another company site, test plan writing, cable builds, and professional soldering training down to 0402 parts.</li>
-            <li><b>STEM Ambassador:</b> gave an engineering demonstration and careers talk to visiting school groups.</li>
-          </ul>
-          <div class="meta"><span class="chip">Zuken CR-8000</span><span class="chip">Altium Designer</span><span class="chip">ESD testing</span><span class="chip">Test planning</span></div>
-        </div>
-      </article>
-
-      <!-- 04 First-year team project: hidden until details are added -->
-      <article class="card reveal" id="firstyear" hidden>
-        <div class="card-body">
-          <div class="card-top"><span class="num">04</span><span class="period">First year</span></div>
-          <h3>First-year team project</h3>
-          <div class="sub">Aston University</div>
-          <p class="summary">Add a short summary here.</p>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-  <div class="wrap">
-    <div class="eyebrow reveal">Contact</div>
-    <h2 class="reveal" style="--d:.06s">Get in touch</h2>
-    <p class="lead reveal" style="--d:.12s">Happy to talk about any of these projects, or about engineering work.</p>
-    <div class="cta reveal" style="--d:.18s">
-      <a class="btn primary" href="#" data-mail>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span id="mailtext">Send an email</span></a>
-      <a class="btn" href="https://www.linkedin.com/in/ismail-hussain22/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11.5H3V9.75zm6.5 0h3.83v1.57h.06c.53-1 1.84-2.07 3.78-2.07 4.04 0 4.78 2.66 4.78 6.12v5.88h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75v5.29h-4V9.75z"/></svg>LinkedIn</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <span>&copy; <span id="yr">2026</span> Ismail Hussain</span>
-  <span>Electrical and Electronic Engineer, MIET</span>
-</footer>
-
-<div class="lb" id="lb" aria-hidden="true" role="dialog" aria-label="Image viewer">
-  <button id="lbclose" aria-label="Close image">&times;</button>
-  <img id="lbimg" alt="">
-  <p id="lbcap"></p>
-</div>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
 <script>
-(function(){
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var $ = function(s,c){return (c||document).querySelector(s)};
-  var $$ = function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
-
-  /* email assembled in script so it is not sitting in the page source as plain text */
-  var u = 'ismail.h2589', d = 'gmail.com', addr = u + '@' + d;
-  $$('[data-mail]').forEach(function(a){ a.href = 'mailto:' + addr; });
-  var mt = $('#mailtext'); if (mt) mt.textContent = addr;
-  $('#yr').textContent = new Date().getFullYear();
-
-  /* nav, progress */
-  var nav = $('#nav'), bar = $('#progress');
-  var links = $$('.links a');
-  function onScroll(){
-    var y = window.scrollY, h = document.documentElement.scrollHeight - innerHeight;
-    bar.style.transform = 'scaleX(' + (h > 0 ? y / h : 0) + ')';
-    nav.classList.toggle('scrolled', y > 24);
+/* Runs before first paint: marks JS as available and applies the saved or system theme (no flash). */
+(function () {
+  var root = document.documentElement, t = null;
+  root.classList.remove('no-js'); root.classList.add('js');
+  try { t = localStorage.getItem('theme'); } catch (e) {}
+  if (t !== 'light' && t !== 'dark') {
+    t = window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
   }
-  addEventListener('scroll', onScroll, {passive:true}); onScroll();
-
-  var secs = ['about','projects','contact'].map(function(id){return document.getElementById(id)});
-  var so = new IntersectionObserver(function(es){
-    es.forEach(function(e){
-      if(e.isIntersecting){
-        links.forEach(function(l){ l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id); });
-      }
-    });
-  }, {rootMargin:'-45% 0px -50% 0px'});
-  secs.forEach(function(s){ so.observe(s); });
-  var topO = new IntersectionObserver(function(es){
-    if(es[0].isIntersecting) links.forEach(function(l){ l.classList.remove('active'); });
-  }, {threshold:.6});
-  topO.observe($('#top'));
-
-  /* reveal on scroll */
-  var ro = new IntersectionObserver(function(es){
-    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target); } });
-  }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
-  $$('.reveal').forEach(function(el){ ro.observe(el); });
-
-  /* counters */
-  function runCount(el){
-    var to = +el.dataset.count, t0 = null, dur = 1400;
-    if (reduce){ el.textContent = to; return; }
-    function step(ts){
-      if(!t0) t0 = ts;
-      var p = Math.min((ts - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(to * e);
-      if(p < 1) requestAnimationFrame(step);
-    }
-    el.textContent = 0; requestAnimationFrame(step);
-  }
-  var co = new IntersectionObserver(function(es){
-    es.forEach(function(e){ if(e.isIntersecting){ runCount(e.target); co.unobserve(e.target); } });
-  }, {threshold:.6});
-  $$('[data-count]').forEach(function(el){ co.observe(el); });
-
-  /* rotating role words */
-  var words = ['power electronics','embedded systems','PCB design','hardware testing'];
-  var wEl = $('#word'), wi = 0, ci = words[0].length, del = true;
-  if(!reduce){
-    (function tick(){
-      var w = words[wi], delay = del ? 38 : 70;
-      if(del){ ci--; if(ci <= 0){ del = false; wi = (wi + 1) % words.length; ci = 0; delay = 260; } }
-      else { ci++; if(ci >= words[wi].length){ del = true; delay = 1700; } }
-      wEl.textContent = words[wi].slice(0, Math.max(ci,0)) || ' ';
-      setTimeout(tick, delay);
-    })();
-  }
-
-  /* card spotlight */
-  $$('.card').forEach(function(c){
-    c.addEventListener('pointermove', function(e){
-      var r = c.getBoundingClientRect();
-      c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-      c.style.setProperty('--my', (e.clientY - r.top) + 'px');
-    });
-  });
-
-  /* dropdown galleries */
-  $$('.toggle').forEach(function(b){
-    b.addEventListener('click', function(){
-      var panel = document.getElementById(b.getAttribute('aria-controls'));
-      var open = b.getAttribute('aria-expanded') === 'true';
-      b.setAttribute('aria-expanded', String(!open));
-      panel.classList.toggle('open', !open);
-      var label = b.firstChild;
-      if(label && label.nodeType === 3){
-        label.nodeValue = label.nodeValue.replace(open ? /Hide/ : /View/, open ? 'View' : 'Hide');
-      }
-    });
-  });
-
-  /* lightbox */
-  var lb = $('#lb'), lbimg = $('#lbimg'), lbcap = $('#lbcap'), last = null;
-  function openLB(fig){
-    last = document.activeElement;
-    lbimg.src = fig.dataset.full; lbimg.alt = $('img', fig).alt; lbcap.textContent = fig.dataset.cap || '';
-    lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); $('#lbclose').focus();
-  }
-  function closeLB(){
-    lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); if(last) last.focus();
-  }
-  $$('.shot').forEach(function(f){
-    f.tabIndex = 0;
-    f.addEventListener('click', function(){ openLB(f); });
-    f.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openLB(f); } });
-  });
-  lb.addEventListener('click', function(e){ if(e.target !== lbimg) closeLB(); });
-  addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLB(); });
-
-  /* hero circuit traces */
-  var cv = $('#traces'), ctx = cv.getContext('2d'), paths = [], pulses = [], W = 0, H = 0, dpr = 1, running = true, G = 34;
-  function rnd(a,b){ return a + Math.random() * (b - a); }
-  function build(){
-    dpr = Math.min(devicePixelRatio || 1, 2);
-    var r = cv.getBoundingClientRect(); W = r.width; H = r.height;
-    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
-    paths = []; pulses = [];
-    var count = Math.round(Math.min(46, Math.max(18, W * H / 26000)));
-    var O = [[1,0],[0,1],[-1,0],[0,-1]];
-    for(var i = 0; i < count; i++){
-      var x = Math.round(rnd(0, W) / G) * G, y = Math.round(rnd(0, H) / G) * G;
-      var pts = [[x,y]], di = Math.floor(rnd(0,4)), segs = Math.floor(rnd(3,7));
-      for(var s = 0; s < segs; s++){
-        var len = Math.floor(rnd(2,6)) * G, dv = O[di];
-        x += dv[0] * len; y += dv[1] * len; pts.push([x,y]);
-        var nd = (di + (Math.random() < .5 ? 1 : 3)) % 4, nv = O[nd], c = G * .6;
-        x += (dv[0] + nv[0]) * c; y += (dv[1] + nv[1]) * c; pts.push([x,y]);
-        di = nd;
-      }
-      var cum = [0], total = 0;
-      for(var j = 1; j < pts.length; j++){
-        total += Math.hypot(pts[j][0] - pts[j-1][0], pts[j][1] - pts[j-1][1]); cum.push(total);
-      }
-      paths.push({pts:pts, cum:cum, total:total});
-    }
-    for(var p = 0; p < paths.length; p++){
-      if(Math.random() < .55) pulses.push({p:p, d:rnd(0, paths[p].total), v:rnd(40,95)});
-    }
-  }
-  function at(path, d){
-    var c = path.cum, i = 1;
-    while(i < c.length - 1 && c[i] < d) i++;
-    var t = (d - c[i-1]) / (c[i] - c[i-1] || 1), a = path.pts[i-1], b = path.pts[i];
-    return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t];
-  }
-  function drawStatic(){
-    ctx.clearRect(0,0,W,H);
-    ctx.lineWidth = 1.4; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
-    paths.forEach(function(pa){
-      ctx.strokeStyle = 'rgba(94,234,212,.22)'; ctx.beginPath();
-      pa.pts.forEach(function(q,i){ i ? ctx.lineTo(q[0],q[1]) : ctx.moveTo(q[0],q[1]); }); ctx.stroke();
-      [pa.pts[0], pa.pts[pa.pts.length - 1]].forEach(function(q){
-        ctx.fillStyle = 'rgba(10,17,32,1)'; ctx.strokeStyle = 'rgba(94,234,212,.4)';
-        ctx.beginPath(); ctx.arc(q[0],q[1],3.2,0,6.283); ctx.fill(); ctx.stroke();
-      });
-    });
-  }
-  var lastT = 0;
-  function frame(ts){
-    if(!running){ return; }
-    var dt = Math.min((ts - lastT) / 1000, .05); lastT = ts;
-    drawStatic();
-    pulses.forEach(function(pu){
-      var pa = paths[pu.p]; pu.d += pu.v * dt;
-      if(pu.d > pa.total + 40){ pu.d = -20; pu.v = rnd(40,95); }
-      for(var k = 0; k < 14; k++){
-        var dd = pu.d - k * 4; if(dd < 0 || dd > pa.total) continue;
-        var q = at(pa, dd); ctx.fillStyle = 'rgba(94,234,212,' + (.5 * (1 - k / 14)) + ')';
-        ctx.beginPath(); ctx.arc(q[0], q[1], 2.4 - k * .1, 0, 6.283); ctx.fill();
-      }
-    });
-    requestAnimationFrame(frame);
-  }
-  function start(){ build(); drawStatic(); if(!reduce){ running = true; lastT = performance.now(); requestAnimationFrame(frame); } }
-  start();
-  var rt; addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(function(){ running = false; setTimeout(start, 30); }, 200); });
-  new IntersectionObserver(function(es){
-    var vis = es[0].isIntersecting;
-    if(vis && !running && !reduce){ running = true; lastT = performance.now(); requestAnimationFrame(frame); }
-    if(!vis) running = false;
-  }).observe($('#top'));
-  document.addEventListener('visibilitychange', function(){ if(document.hidden) running = false; });
-
-  /* un-hide the first-year card automatically once it has real text */
-  var fy = $('#firstyear');
-  if(fy && fy.dataset.ready === 'true') fy.hidden = false;
+  root.setAttribute('data-theme', t);
 })();
 </script>
+<link rel="stylesheet" href="css/site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ismail Hussain",
+  "url": "https://ismail-h01.github.io/",
+  "image": "https://ismail-h01.github.io/assets/img/og-image.png",
+  "jobTitle": "Electrical and Electronic Engineer",
+  "description": "Electrical and electronic engineer with a First Class BEng (Hons) from Aston University. Power electronics, embedded systems and PCB design.",
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Aston University" },
+  "memberOf": { "@type": "Organization", "name": "Institution of Engineering and Technology" },
+  "knowsAbout": ["Power electronics", "Embedded systems", "PCB design", "ESD testing", "Highway lighting design"],
+  "sameAs": ["https://www.linkedin.com/in/ismail-hussain22/"]
+}
+</script>
+</head>
+
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><span id="progress"></span></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Ismail Hussain, back to top"><span class="dot" aria-hidden="true"></span>Ismail Hussain</a>
+  <nav id="menu" aria-label="Primary">
+    <ul class="links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="nav-tools">
+    <button class="icon-btn" id="themeBtn" type="button" aria-label="Switch to light theme">
+      <svg class="i-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+    <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero" id="hero" aria-labelledby="hero-title">
+    <canvas id="traces" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <p class="badge reveal"><b>First Class</b> BEng (Hons) <span class="sep" aria-hidden="true">|</span> <b>MIET</b></p>
+      <h1 id="hero-title" class="reveal" style="--d:.08s">Ismail<br><span class="grad">Hussain</span></h1>
+      <p class="role reveal" style="--d:.16s">Electrical and electronic engineer focused on
+        <strong class="role-static">power electronics, embedded systems and PCB design</strong><strong class="role-typed" id="word" aria-hidden="true"></strong><span class="caret" aria-hidden="true"></span>
+      </p>
+      <p class="hero-lead reveal" style="--d:.2s">I design, build and test electronics: from isolated gate drives and PCB layout to firmware for smart-home devices.</p>
+      <div class="cta reveal" style="--d:.26s">
+        <a class="btn primary" href="#work">View my work
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+        <a class="btn" href="assets/docs/Ismail-Hussain-CV.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>CV (PDF)</a>
+        <a class="btn" href="https://www.linkedin.com/in/ismail-hussain22/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11.5H3V9.75zm6.5 0h3.83v1.57h.06c.53-1 1.84-2.07 3.78-2.07 4.04 0 4.78 2.66 4.78 6.12v5.88h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75v5.29h-4V9.75z"/></svg>LinkedIn</a>
+        <a class="btn" href="#contact" data-mail>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
+      </div>
+      <ul class="hero-meta reveal" style="--d:.34s" aria-label="Background">
+        <li>Now <b>Amey Consulting</b></li>
+        <li>Previously <b>Renishaw</b></li>
+        <li>Graduated <b>Aston University</b></li>
+      </ul>
+    </div>
+    <a class="scroll-hint" href="#about" aria-label="Scroll to About"><span>Scroll</span><i aria-hidden="true"></i></a>
+  </section>
+
+  <!-- ============================ HIGHLIGHTS ============================ -->
+  <section class="stats-wrap" aria-label="Highlights">
+    <div class="wrap">
+      <ul class="stats reveal">
+        <li class="stat"><div class="n"><span>1st</span></div><p>Class honours, BEng (Hons) Electrical and Electronic Engineering, Aston University</p></li>
+        <li class="stat"><div class="n"><span data-count="92">92</span></div><p>tests in the final year project validation plan (83 passed)</p></li>
+        <li class="stat"><div class="n"><em>&plusmn;</em><span data-count="12">12</span><em> kV</em></div><p>ESD contact discharge sweep carried out on placement</p></li>
+        <li class="stat"><div class="n"><span data-count="5">5</span></div><p>leadership, mentoring and outreach roles</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================ ABOUT ============================ -->
+  <section id="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <p class="eyebrow reveal">About</p>
+      <h2 id="about-title" class="reveal" style="--d:.06s">Hardware that gets built, tested and measured.</h2>
+      <div class="about-grid">
+        <div class="prose reveal" style="--d:.12s">
+          <p>I am an <b>electrical and electronic engineer</b> with a <b>First Class BEng (Hons)</b> from Aston University and a year of industrial placement at Renishaw. I like the point where a design meets the bench: laying out a board, getting it built, and measuring whether it does what the simulation said it would.</p>
+          <p>My projects include an isolated gate drive for a three-phase converter, a smart-home controller built on the Matter standard with custom power electronics and firmware, and PCB redesign and ESD qualification work on placement. Alongside the technical work I have represented students at school and course level, mentored through the Royal Academy of Engineering, and spoken to school groups as a STEM Ambassador.</p>
+          <p>I now work in highway and street lighting design at Amey Consulting, applying British Standards and photometric analysis to real schemes.</p>
+        </div>
+        <aside class="glance reveal" style="--d:.2s" aria-label="At a glance">
+          <h3>At a glance</h3>
+          <dl>
+            <div><dt>Degree</dt><dd>BEng (Hons) Electrical and Electronic Engineering, <b>First Class Honours</b></dd></div>
+            <div><dt>University</dt><dd>Aston University, including a year in industry</dd></div>
+            <div><dt>Membership</dt><dd>Member of the IET (MIET)</dd></div>
+            <div><dt>Now</dt><dd>Highway and street lighting design, Amey Consulting</dd></div>
+            <div><dt>Strengths</dt><dd>Power electronics, embedded systems, PCB design, testing</dd></div>
+            <div><dt>Based</dt><dd>West Midlands, UK</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ WORK ============================ -->
+  <section id="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <p class="eyebrow reveal">Selected work</p>
+      <h2 id="work-title" class="reveal" style="--d:.06s">Projects</h2>
+      <p class="lead reveal" style="--d:.12s">Three projects, each with what I did, how I checked that it worked, and what came out. Open the photos and figures on any card to see the hardware.</p>
+
+      <div class="projects">
+
+        <!-- ---------- 01 MACCS+ ---------- -->
+        <article class="card reveal" id="p-maccs" data-skills="proteus fusion c espidf freertos matter debug soldering git" aria-labelledby="t-maccs">
+          <div class="card-body">
+            <div class="card-top"><span class="num">01</span><span class="period">Sep 2025 to Apr 2026</span></div>
+            <h3 id="t-maccs">MACCS+: Matter-enabled curtain and lighting controller</h3>
+            <p class="sub">Final year project, BEng (Hons) Electrical and Electronic Engineering</p>
+            <div class="card-grid">
+              <div class="card-main">
+                <p class="summary"><b>The problem:</b> curtains are a daily task that is hard with limited mobility, and many smart-home products only work inside one vendor's ecosystem. <b>The answer:</b> a self-designed controller for a curtain and LED lighting that joins a smart home through Matter, and that still works from physical buttons when the network is down.</p>
+                <ul class="points">
+                  <li><b>Custom power PCB</b> with reverse polarity protection, hardware soft start, polyfuses, a TVS diode and a 12 V to 5 V buck stage. The 5 V rail held 5.02 V under full load.</li>
+                  <li><b>Firmware</b> in C and C++ on an ESP32-C6 using ESP-IDF and FreeRTOS, with limit switch interrupts, a stall timeout and position saved across power cycles.</li>
+                  <li><b>Matter control</b> commissioned into Apple Home over Bluetooth LE, with Siri voice commands. Five control paths (Matter, web page, buttons, scheduler, REST API) run at once without conflict.</li>
+                  <li><b>Mechanical design</b> in Fusion 360: a belt-driven, centre-opening mechanism with 3D printed parts, including a sacrificial part that protects the assembly on overrun.</li>
+                  <li><b>Debugging:</b> a limit switch feedback loop in the Matter delegate was traced to a command being written from a status callback, and fixed.</li>
+                </ul>
+                <ul class="results" aria-label="Key results">
+                  <li><strong>92</strong><span>tests: 83 passed, 7 partial, 2 failed</span></li>
+                  <li><strong>5.02 V</strong><span>5 V rail under full load</span></li>
+                  <li><strong>30 min</strong><span>soak test, no crash or hang</span></li>
+                </ul>
+                <p class="next"><b>Reported openly:</b> Alexa did not discover the device and effect switching through Matter did not work. <b>Next:</b> reposition the limit switches to remove overtravel, find the Alexa fault and add over-the-air updates.</p>
+              </div>
+              <dl class="facts">
+                <div><dt>Role</dt><dd>Individual project: electronics, firmware and mechanical design</dd></div>
+                <div><dt>Built with</dt><dd>ESP32-C6, ESP-IDF, FreeRTOS, Matter, Proteus, Fusion 360</dd></div>
+                <div><dt>Evidence</dt><dd>92-test plan, risk assessment, logbook and final report</dd></div>
+              </dl>
+            </div>
+            <div class="actions">
+              <button class="btn toggle" type="button" aria-expanded="false" aria-controls="drop-maccs" data-label="photos">View photos
+                <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+            </div>
+          </div>
+          <div class="drop" id="drop-maccs" role="region" aria-label="MACCS+ photos"><div><div class="drop-inner">
+            <div class="gallery split">
+              <figure class="shot">
+                <button class="shot-open" type="button" data-gallery="maccs" data-full="assets/img/maccs-build.jpg" data-caption="MACCS+ assembled: custom power PCB, ESP32-C6, motor driver and geared motor in the printed housing, with the button panel in front" aria-label="Enlarge photo: MACCS+ assembled controller">
+                  <img src="assets/img/maccs-build.jpg" width="1269" height="1458" loading="lazy" alt="MACCS+ controller assembled in a 3D printed housing, showing the custom green power PCB with an ESP32-C6, a geared motor with belt pulley, and the five-button panel">
+                </button>
+                <figcaption>Assembled controller, open housing</figcaption>
+              </figure>
+              <div>
+                <h4 class="legend-title">What is in the photo</h4>
+                <ol class="legend">
+                  <li><span><b>Custom power PCB</b>Holds the ESP32-C6 board, with protection and the 12 V to 5 V buck stage. Etched and soldered by hand.</span></li>
+                  <li><span><b>Motor driver</b>The red H-bridge module that switches motor direction and speed.</span></li>
+                  <li><span><b>Geared motor and belt pulley</b>Drives the belt that moves the curtain carriages.</span></li>
+                  <li><span><b>3D printed housing</b>Designed in Fusion 360 and screwed onto the aluminium rail.</span></li>
+                  <li><span><b>Button panel</b>Five physical buttons that work without Wi-Fi.</span></li>
+                </ol>
+              </div>
+            </div>
+          </div></div></div>
+        </article>
+
+        <!-- ---------- 02 EE3PEC ---------- -->
+        <article class="card reveal" id="p-pec" data-skills="simulink proteus softconsole scope debug soldering" aria-labelledby="t-pec">
+          <div class="card-body">
+            <div class="card-top"><span class="num">02</span><span class="period">Autumn 2025</span></div>
+            <h3 id="t-pec">Three-phase AC-DC-AC converter and isolated gate drive</h3>
+            <p class="sub">EE3PEC power electronics paper, Aston University</p>
+            <div class="card-grid">
+              <div class="card-main">
+                <p class="summary"><b>The problem:</b> a converter model is only convincing if hardware agrees with it. <b>The answer:</b> a MATLAB/Simulink model of a rectifier, DC link and three-phase inverter, paired with a gate drive circuit designed, built and tested on the bench, with measured waveforms compared against the simulation.</p>
+                <ul class="points">
+                  <li><b>Model:</b> single-phase then three-phase rectifier feeding a voltage-source inverter and a 20 kW balanced load, at 50 Hz fundamental, modulation index 0.8, 750 Hz switching and 10 &micro;s dead-time.</li>
+                  <li><b>Two design additions</b> to the converter: limiting capacitor inrush stress and limiting DC-link overvoltage, in line with industrial practice.</li>
+                  <li><b>Gate drive PCB</b> with galvanic isolation between controller logic and the power stage, and matched tracks on both channels so signal delay stays equal.</li>
+                  <li><b>Control:</b> PWM with dead-time generated on a Microsemi SmartFusion board, programmed with Libero and SoftConsole.</li>
+                  <li><b>Debugging:</b> a transistor pin-out mismatch between the datasheet and the schematic library was caught during soldering, before power-up.</li>
+                </ul>
+                <ul class="results" aria-label="Key results">
+                  <li><strong>30 V</strong><span>gate drive swing, +15 V to &minus;15 V</span></li>
+                  <li><strong>~8 &micro;s</strong><span>dead-time measured on the oscilloscope</span></li>
+                  <li><strong>~10 ns</strong><span>output rise and fall time</span></li>
+                </ul>
+                <p class="next"><b>Reported openly:</b> experimental waveforms matched the simulation in structure, with some distortion and instances of shoot-through, likely caused by three separate gate drives with different propagation delays (about 300 ns to 1 &micro;s). <b>Next:</b> optimise the dead-time.</p>
+              </div>
+              <dl class="facts">
+                <div><dt>Role</dt><dd>Individual paper: modelling, PCB design, build and test</dd></div>
+                <div><dt>Built with</dt><dd>MATLAB/Simulink, Proteus, Libero, SoftConsole, oscilloscope</dd></div>
+                <div><dt>Evidence</dt><dd>Full paper (PDF), photos of the built board and oscilloscope captures</dd></div>
+              </dl>
+            </div>
+            <div class="actions">
+              <a class="btn primary" href="assets/docs/EE3PEC-Ismail-Hussain.pdf" target="_blank" rel="noopener">Read the paper (PDF)
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+              <button class="btn toggle" type="button" aria-expanded="false" aria-controls="drop-pec" data-label="the hardware and figures">View the hardware and figures
+                <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+            </div>
+          </div>
+          <div class="drop" id="drop-pec" role="region" aria-label="EE3PEC hardware and figures"><div><div class="drop-inner">
+            <div class="gallery grid">
+              <figure class="shot">
+                <button class="shot-open" type="button" data-gallery="pec" data-full="assets/img/gate-drive-board.jpg" data-caption="The built two-channel isolated gate drive board" aria-label="Enlarge photo: built gate drive board">
+                  <img src="assets/img/gate-drive-board.jpg" width="1134" height="684" loading="lazy" alt="Built two-channel isolated gate drive PCB with optocouplers, screw terminals and twisted-pair leads, photographed on a dark wooden surface">
+                </button>
+                <figcaption>The built two-channel isolated gate drive board</figcaption>
+              </figure>
+              <figure class="shot">
+                <button class="shot-open" type="button" data-gallery="pec" data-full="assets/img/ee3pec-pcb-layout.jpg" data-caption="PCB layout (paper Fig. 39): both channels isolated, with matched track layout" aria-label="Enlarge figure: PCB layout">
+                  <img src="assets/img/ee3pec-pcb-layout.jpg" width="1133" height="1039" loading="lazy" alt="PCB layout of the gate drive in Proteus, with red, green and blue copper areas separating the supply side and the two isolated channels">
+                </button>
+                <figcaption>PCB layout: two isolated channels, matched tracks</figcaption>
+              </figure>
+              <figure class="shot">
+                <button class="shot-open" type="button" data-gallery="pec" data-full="assets/img/ee3pec-gate-drive-scope.jpg" data-caption="Oscilloscope capture of gate drive outputs from three separate gate drives, controller driven (paper Fig. 40)" aria-label="Enlarge figure: oscilloscope capture">
+                  <img src="assets/img/ee3pec-gate-drive-scope.jpg" width="1156" height="648" loading="lazy" alt="Oscilloscope screen showing yellow, blue and pink gate drive waveforms with measurements for rise time, fall time, period and duty cycle">
+                </button>
+                <figcaption>Gate drive outputs captured on the oscilloscope</figcaption>
+              </figure>
+              <figure class="shot">
+                <button class="shot-open" type="button" data-gallery="pec" data-full="assets/img/ee3pec-gate-drive-schematic.jpg" data-caption="Gate drive circuit schematic (paper Fig. 38): isolated supplies, optocouplers and totem-pole outputs" aria-label="Enlarge figure: gate drive schematic">
+                  <img src="assets/img/ee3pec-gate-drive-schematic.jpg" width="1016" height="934" loading="lazy" alt="Schematic of the gate drive circuit with three isolated DC-DC supplies, two optocoupler stages and totem-pole transistor outputs">
+                </button>
+                <figcaption>Schematic: isolated supplies, optocouplers, totem-pole outputs</figcaption>
+              </figure>
+              <figure class="shot">
+                <button class="shot-open" type="button" data-gallery="pec" data-full="assets/img/ee3pec-inverter-model.jpg" data-caption="Three-leg inverter model in Simulink (paper Fig. 9)" aria-label="Enlarge figure: Simulink inverter model">
+                  <img src="assets/img/ee3pec-inverter-model.jpg" width="1067" height="804" loading="lazy" alt="Simulink model of a three-leg inverter with six IGBTs and anti-parallel diodes">
+                </button>
+                <figcaption>Simulink three-leg inverter model</figcaption>
+              </figure>
+            </div>
+          </div></div></div>
+        </article>
+
+        <!-- ---------- 03 Renishaw ---------- -->
+        <article class="card reveal" id="p-renishaw" data-skills="zuken altium ltspice esd debug soldering" aria-labelledby="t-renishaw">
+          <div class="card-body">
+            <div class="card-top"><span class="num">03</span><span class="period">2024 to 2025</span></div>
+            <h3 id="t-renishaw">Electronics placement at Renishaw</h3>
+            <p class="sub">Industrial placement, Encoder Product Division</p>
+            <div class="card-grid">
+              <div class="card-main">
+                <p class="summary">A year inside a professional electronics design team, working on PCB design, test planning and qualification testing for precision encoder products. This summary stays at a general level.</p>
+                <ul class="points">
+                  <li><b>Test jig PCB redesigned from scratch</b> in Zuken CR-8000, working from legacy documentation. Obsolete parts were replaced and the board was made to fit the existing jig. It reached the board testing stage before the placement ended.</li>
+                  <li><b>ESD qualification:</b> a self-directed contact discharge sweep up to &plusmn;12 kV on a replacement protection device, with a risk assessment completed first. I presented the findings to senior engineers, and the report was approved for production.</li>
+                  <li><b>Protection investigation:</b> structured pulse testing, including at elevated temperature, to assess whether a protection component was needed. The results were reviewed and signed off by stakeholders.</li>
+                  <li><b>Other work:</b> a PCB for a project at another company site, test plan writing, cable builds, and professional soldering training down to 0402 parts.</li>
+                  <li><b>Outreach:</b> engineering demonstrations and a careers talk as a STEM Ambassador, and a second-place finish in the Early Careers Network Challenge (see Leadership).</li>
+                </ul>
+                <ul class="results" aria-label="Key results">
+                  <li><strong>&plusmn;12 kV</strong><span>ESD sweep, report approved for production</span></li>
+                  <li><strong>12 months</strong><span>in an electronics design team</span></li>
+                </ul>
+              </div>
+              <dl class="facts">
+                <div><dt>Role</dt><dd>Industrial Placement, Electronics</dd></div>
+                <div><dt>Built with</dt><dd>Zuken CR-8000, Altium Designer, LTspice, ESD test equipment</dd></div>
+                <div><dt>Note</dt><dd>Details are kept general to respect company confidentiality</dd></div>
+              </dl>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ APPROACH ============================ -->
+  <section id="approach" aria-labelledby="approach-title">
+    <div class="wrap">
+      <p class="eyebrow reveal">How I work</p>
+      <h2 id="approach-title" class="reveal" style="--d:.06s">Habits that show up in the projects.</h2>
+      <ul class="approach">
+        <li class="reveal">
+          <span class="ico" aria-hidden="true">01</span>
+          <h3>Check against the source</h3>
+          <p>Hand measurements suggested 18 mm hole spacing on the motor bracket. The datasheet said 17 mm. Dimensions, pin-outs and ratings get checked against primary documents before anything is printed or soldered, which also caught a transistor pin-out mismatch on the gate drive board.</p>
+          <a href="#p-maccs">See MACCS+</a>
+        </li>
+        <li class="reveal" style="--d:.08s">
+          <span class="ico" aria-hidden="true">02</span>
+          <h3>Test it, then report what happened</h3>
+          <p>The final year project was validated against 92 tests. The results list seven partial passes and two failures with causes where known. A result that cannot yet be explained is still a result worth recording.</p>
+          <a href="#p-maccs">See the results</a>
+        </li>
+        <li class="reveal" style="--d:.16s">
+          <span class="ico" aria-hidden="true">03</span>
+          <h3>Keep layers independent</h3>
+          <p>The motor driver knows nothing about Matter, and the limit switches stop the motor whatever the software believes. Separating hardware drivers from protocol code made faults far easier to isolate.</p>
+          <a href="#p-maccs">See the design</a>
+        </li>
+        <li class="reveal" style="--d:.24s">
+          <span class="ico" aria-hidden="true">04</span>
+          <h3>Learn the tool, keep the fundamentals</h3>
+          <p>Proteus fundamentals carried over to Altium and Zuken CR-8000. CAD was new for the mechanical design, and ESD testing was new on placement, so each was learned in small steps before the real work started.</p>
+          <a href="#p-renishaw">See the placement</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================ EXPERIENCE ============================ -->
+  <section id="experience" aria-labelledby="exp-title">
+    <div class="wrap">
+      <p class="eyebrow reveal">Experience</p>
+      <h2 id="exp-title" class="reveal" style="--d:.06s">Where I have worked and studied.</h2>
+
+      <ol class="timeline">
+        <li class="t-item reveal" id="x-amey" data-skills="autocad lightingreality bs5489 bs13201">
+          <span class="t-dot" aria-hidden="true"></span>
+          <div class="t-card">
+            <p class="t-date">2026 to present</p>
+            <h3>Highway and street lighting design</h3>
+            <p class="t-org">Amey Consulting</p>
+            <ul>
+              <li>Produces photometric calculations in Lighting Reality and lighting layout drawings in AutoCAD.</li>
+              <li>Applies BS 5489-1 and BS EN 13201 to highway and street lighting schemes.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="t-item reveal" id="x-renishaw" data-skills="zuken altium ltspice esd debug soldering">
+          <span class="t-dot" aria-hidden="true"></span>
+          <div class="t-card">
+            <p class="t-date">2024 to 2025</p>
+            <h3>Industrial Placement, Electronics</h3>
+            <p class="t-org">Renishaw plc, Encoder Product Division</p>
+            <ul>
+              <li>Redesigned a production test jig PCB from scratch and led a self-directed ESD qualification up to &plusmn;12 kV.</li>
+              <li>Ran structured pulse testing, wrote test plans and built cables; trained in professional soldering down to 0402 parts.</li>
+              <li><a href="#p-renishaw">Read the placement summary</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="t-item reveal" id="x-aston" data-skills="proteus simulink fusion c espidf freertos matter softconsole scope">
+          <span class="t-dot" aria-hidden="true"></span>
+          <div class="t-card">
+            <p class="t-date">Graduated 2026</p>
+            <h3>BEng (Hons) Electrical and Electronic Engineering</h3>
+            <p class="t-org">Aston University, First Class Honours</p>
+            <ul>
+              <li>Final year project MACCS+ and the EE3PEC converter and gate drive paper (see Work).</li>
+              <li>School Rep for Engineering and Physical Sciences and Student Rep for Electrical and Electronic Engineering.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+
+      <h3 class="sub-h reveal">Education and credentials</h3>
+      <ul class="creds">
+        <li class="reveal"><span class="cred-k">Degree</span><h4>First Class Honours</h4><p>BEng (Hons) Electrical and Electronic Engineering, Aston University.</p></li>
+        <li class="reveal" style="--d:.06s"><span class="cred-k">Membership</span><h4>MIET</h4><p>Member of the Institution of Engineering and Technology.</p></li>
+        <li class="reveal" style="--d:.12s"><span class="cred-k">Training</span><h4>Professional soldering</h4><p>Renishaw basic (12 hours) and advanced (24 hours) courses, including 0402 parts with solder paste under a microscope.</p></li>
+        <li class="reveal" style="--d:.18s"><span class="cred-k">Training</span><h4>Software and programming</h4><p>Zuken CR-8000 on-site training (one day) and a 40-hour C programming course.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================ SKILLS ============================ -->
+  <section id="skills" aria-labelledby="skills-title">
+    <div class="wrap">
+      <p class="eyebrow reveal">Skills</p>
+      <h2 id="skills-title" class="reveal" style="--d:.06s">Tools I have used in real work.</h2>
+      <p class="lead reveal" style="--d:.12s">Select a skill to see where it was used.</p>
+      <div class="skill-grid reveal" style="--d:.16s">
+        <div class="skill-group">
+          <h3>PCB and CAD</h3>
+          <div class="chips">
+            <button type="button" class="skill" data-skill="zuken" aria-pressed="false">Zuken CR-8000</button>
+            <button type="button" class="skill" data-skill="altium" aria-pressed="false">Altium Designer</button>
+            <button type="button" class="skill" data-skill="proteus" aria-pressed="false">Proteus</button>
+            <button type="button" class="skill" data-skill="fusion" aria-pressed="false">Fusion 360</button>
+            <button type="button" class="skill" data-skill="autocad" aria-pressed="false">AutoCAD</button>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Simulation</h3>
+          <div class="chips">
+            <button type="button" class="skill" data-skill="simulink" aria-pressed="false">MATLAB / Simulink</button>
+            <button type="button" class="skill" data-skill="ltspice" aria-pressed="false">LTspice</button>
+            <button type="button" class="skill" data-skill="lightingreality" aria-pressed="false">Lighting Reality</button>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Embedded</h3>
+          <div class="chips">
+            <button type="button" class="skill" data-skill="c" aria-pressed="false">C / C++</button>
+            <button type="button" class="skill" data-skill="espidf" aria-pressed="false">ESP-IDF</button>
+            <button type="button" class="skill" data-skill="freertos" aria-pressed="false">FreeRTOS</button>
+            <button type="button" class="skill" data-skill="matter" aria-pressed="false">Matter</button>
+            <button type="button" class="skill" data-skill="softconsole" aria-pressed="false">SoftConsole / Libero</button>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Lab and test</h3>
+          <div class="chips">
+            <button type="button" class="skill" data-skill="esd" aria-pressed="false">ESD testing</button>
+            <button type="button" class="skill" data-skill="debug" aria-pressed="false">PCB debugging</button>
+            <button type="button" class="skill" data-skill="soldering" aria-pressed="false">Advanced soldering (0402)</button>
+            <button type="button" class="skill" data-skill="scope" aria-pressed="false">Oscilloscope measurement</button>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Standards and tools</h3>
+          <div class="chips">
+            <button type="button" class="skill" data-skill="bs5489" aria-pressed="false">BS 5489-1</button>
+            <button type="button" class="skill" data-skill="bs13201" aria-pressed="false">BS EN 13201</button>
+            <button type="button" class="skill" data-skill="git" aria-pressed="false">Git</button>
+          </div>
+        </div>
+      </div>
+      <p class="skill-out" id="skillOut" role="status" aria-live="polite">Select a skill above.</p>
+    </div>
+  </section>
+
+  <!-- ============================ LEADERSHIP ============================ -->
+  <section id="leadership" aria-labelledby="lead-title">
+    <div class="wrap">
+      <p class="eyebrow reveal">Leadership and community</p>
+      <h2 id="lead-title" class="reveal" style="--d:.06s">Representing, mentoring and collaborating.</h2>
+      <p class="lead reveal" style="--d:.12s">Engineering is a team activity. These roles are where I have practised leading, listening and working with people from different backgrounds.</p>
+
+      <ul class="roles">
+        <li class="role-card reveal">
+          <span class="r-tag">Mentoring</span>
+          <h3>Mentor, GEEP</h3>
+          <p class="r-org">Royal Academy of Engineering</p>
+          <p>Mentor on the Graduate Engineering Engagement Programme, which supports engineering students from under-represented backgrounds into engineering careers. I give one-to-one career guidance to a student as they move towards industry.</p>
+          <p class="r-skills">Mentoring &middot; Communication &middot; Career guidance</p>
+        </li>
+        <li class="role-card reveal" style="--d:.06s">
+          <span class="r-tag">Representation</span>
+          <h3>School Rep</h3>
+          <p class="r-org">Engineering and Physical Sciences, Aston University</p>
+          <p>Represented students from across the school, bringing their concerns to academic staff and feeding back the outcome.</p>
+          <p class="r-skills">Leadership &middot; Advocacy &middot; Liaison</p>
+        </li>
+        <li class="role-card reveal" style="--d:.12s">
+          <span class="r-tag">Representation</span>
+          <h3>Student Rep</h3>
+          <p class="r-org">Electrical and Electronic Engineering, Aston University</p>
+          <p>Course-level voice for Electrical and Electronic Engineering students, acting as the link between the cohort and staff.</p>
+          <p class="r-skills">Leadership &middot; Listening &middot; Liaison</p>
+        </li>
+        <li class="role-card reveal" style="--d:.18s">
+          <span class="r-tag">Outreach</span>
+          <h3>STEM Ambassador</h3>
+          <p class="r-org">Renishaw</p>
+          <p>Delivered engineering demonstrations and a careers talk to visiting school groups, explaining why STEM subjects matter.</p>
+          <p class="r-skills">Public speaking &middot; Outreach &middot; Explaining technical ideas</p>
+        </li>
+        <li class="role-card reveal" style="--d:.24s">
+          <span class="r-tag">Teamwork</span>
+          <h3>Early Careers Network Challenge</h3>
+          <p class="r-org">Renishaw, placed 2nd of 8 teams</p>
+          <p>In a randomly assigned team that included an HR colleague and another electronics engineer, I designed the survey that shaped our plan to boost early-careers engagement. We presented to a judging panel, and the network contacted us afterwards about using the ideas.</p>
+          <p class="r-skills">Collaboration &middot; Data-led planning &middot; Presenting</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================ CONTACT ============================ -->
+  <section id="contact" class="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <p class="eyebrow reveal">Contact</p>
+      <h2 id="contact-title" class="reveal" style="--d:.06s">Get in touch</h2>
+      <p class="lead reveal" style="--d:.12s">If you would like to talk about any of this work, or about engineering, email is the quickest way to reach me.</p>
+      <div class="cta reveal" style="--d:.18s">
+        <a class="btn primary" href="#contact" data-mail id="mailLink">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span id="mailtext">ismail.h2589 [at] gmail.com</span></a>
+        <button class="btn" type="button" id="copyMail" hidden>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>Copy address</button>
+        <a class="btn" href="https://www.linkedin.com/in/ismail-hussain22/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11.5H3V9.75zm6.5 0h3.83v1.57h.06c.53-1 1.84-2.07 3.78-2.07 4.04 0 4.78 2.66 4.78 6.12v5.88h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75v5.29h-4V9.75z"/></svg>LinkedIn</a>
+        <a class="btn" href="assets/docs/Ismail-Hussain-CV.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Download CV</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>&copy; <span id="yr">2026</span> Ismail Hussain</span>
+  <span>Built by hand: no frameworks, no trackers.</span>
+  <a href="#top">Back to top</a>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="Back to top" hidden>
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
+  <button class="lb-close" id="lbClose" type="button" aria-label="Close image">&times;</button>
+  <button class="lb-nav prev" id="lbPrev" type="button" aria-label="Previous image">&#8249;</button>
+  <img id="lbImg" alt="">
+  <button class="lb-nav next" id="lbNext" type="button" aria-label="Next image">&#8250;</button>
+  <p id="lbCap"></p>
+</div>
+
+<script src="js/site.js" defer></script>
 </body>
 </html>

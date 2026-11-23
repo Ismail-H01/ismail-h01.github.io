@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ismail Hussain | Electrical and Electronic Engineer</title>
+<meta name="description" content="Portfolio of Ismail Hussain, MIET, BEng Electrical and Electronic Engineering (Aston University). Power electronics, embedded systems and PCB design.">
+<meta name="theme-color" content="#0a1120">
+<meta property="og:title" content="Ismail Hussain | Electrical and Electronic Engineer">
+<meta property="og:description" content="Power electronics, embedded systems and PCB design. Selected projects and write-ups.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a1120'/%3E%3Cpath d='M14 40h14l6-16h16' fill='none' stroke='%232dd4bf' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='50' cy='24' r='5' fill='%232dd4bf'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#0a1120;
+    --bg-2:#0e172b;
+    --surface:#111c33;
+    --surface-2:#16233f;
+    --line:rgba(148,172,214,.16);
+    --text:#e8eefb;
+    --muted:#9fb0cf;
+    --accent:#2dd4bf;
+    --accent-2:#5eead4;
+    --warm:#f5b95f;
+    --radius:18px;
+    --ease:cubic-bezier(.2,.7,.2,1);
+    --font:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{
+    background:var(--bg);color:var(--text);font-family:var(--font);
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  ::selection{background:var(--accent);color:#04201c}
+  :focus-visible{outline:2px solid var(--accent-2);outline-offset:3px;border-radius:6px}
+
+  /* progress + nav */
+  .progress{position:fixed;inset:0 auto auto 0;height:3px;width:100%;transform-origin:left;transform:scaleX(0);
+    background:linear-gradient(90deg,var(--accent),var(--warm));z-index:60}
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;
+    padding:14px clamp(18px,4vw,48px);transition:background .35s,backdrop-filter .35s,border-color .35s;
+    border-bottom:1px solid transparent;
+  }
+  nav.scrolled{background:rgba(10,17,32,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+  .brand{font-weight:700;letter-spacing:.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
+  .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(45,212,191,.6);animation:ping 2.4s infinite}
+  @keyframes ping{70%{box-shadow:0 0 0 10px rgba(45,212,191,0)}100%{box-shadow:0 0 0 0 rgba(45,212,191,0)}}
+  .links{display:flex;gap:6px;list-style:none}
+  .links a{
+    text-decoration:none;font-size:.92rem;color:var(--muted);padding:8px 14px;border-radius:999px;transition:color .2s,background .2s;
+  }
+  .links a:hover{color:var(--text);background:rgba(148,172,214,.1)}
+  .links a.active{color:#04201c;background:var(--accent)}
+
+  /* layout */
+  section{padding:clamp(72px,11vw,140px) clamp(18px,5vw,64px);position:relative}
+  .wrap{max-width:1120px;margin:0 auto}
+  .eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px;margin-bottom:18px}
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--accent)}
+  h2{font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+  .lead{color:var(--muted);max-width:640px;font-size:1.06rem}
+
+  /* hero */
+  .hero{min-height:100svh;display:flex;align-items:center;overflow:hidden;padding:110px clamp(18px,5vw,64px) 90px}
+  #traces{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+  .hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:radial-gradient(60% 55% at 28% 48%,rgba(10,17,32,.0) 0%,rgba(10,17,32,.45) 60%,rgba(10,17,32,.8) 100%),
+               linear-gradient(180deg,transparent 70%,var(--bg))}
+  .hero .wrap{position:relative;z-index:2;width:100%}
+  .badge{display:inline-flex;align-items:center;gap:10px;font-size:.84rem;color:var(--muted);
+    border:1px solid var(--line);background:rgba(17,28,51,.6);backdrop-filter:blur(8px);padding:7px 14px;border-radius:999px;margin-bottom:26px}
+  .badge b{color:var(--accent-2);font-weight:600}
+  h1{font-size:clamp(2.8rem,8.6vw,6.2rem);line-height:1.02;letter-spacing:-.035em;font-weight:800;margin-bottom:22px}
+  h1 .grad{background:linear-gradient(100deg,var(--accent-2),var(--accent) 45%,var(--warm));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .role{font-size:clamp(1.1rem,2.3vw,1.5rem);color:var(--muted);min-height:2.1em;max-width:720px}
+  .role strong{color:var(--text);font-weight:600;border-bottom:2px solid var(--accent);padding-bottom:1px}
+  .caret{display:inline-block;width:2px;height:1.05em;background:var(--accent);margin-left:3px;vertical-align:-.15em;animation:blink 1s steps(2) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;font-size:.97rem;cursor:pointer;
+    padding:13px 22px;border-radius:999px;border:1px solid var(--line);background:rgba(17,28,51,.7);color:var(--text);
+    transition:transform .25s var(--ease),background .25s,border-color .25s,box-shadow .25s;font-family:inherit
+  }
+  .btn:hover{transform:translateY(-2px);border-color:rgba(45,212,191,.5);background:var(--surface-2)}
+  .btn.primary{background:var(--accent);color:#04201c;border-color:var(--accent)}
+  .btn.primary:hover{background:var(--accent-2);box-shadow:0 10px 30px -10px rgba(45,212,191,.7)}
+  .btn svg{width:18px;height:18px;flex:none}
+  .scroll-hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:2;color:var(--muted);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px}
+  .scroll-hint i{width:1px;height:38px;background:linear-gradient(var(--accent),transparent);animation:drop 2s infinite}
+  @keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+  /* stats */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:-40px;position:relative;z-index:3}
+  .stat{background:var(--bg-2);padding:30px 26px}
+  .stat .n{font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:800;letter-spacing:-.02em;color:var(--text);font-variant-numeric:tabular-nums}
+  .stat .n em{font-style:normal;color:var(--accent)}
+  .stat p{color:var(--muted);font-size:.9rem;margin-top:4px;line-height:1.45}
+  .stats-wrap{padding:0 clamp(18px,5vw,64px)}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,6vw,80px);align-items:start;margin-top:30px}
+  .about p{color:var(--muted);font-size:1.06rem}
+  .about p + p{margin-top:16px}
+  .about p b{color:var(--text);font-weight:600}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-size:.84rem;padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);transition:all .25s var(--ease)}
+  .chip:hover{color:var(--text);border-color:rgba(45,212,191,.5);transform:translateY(-2px)}
+  .skill-group + .skill-group{margin-top:22px}
+  .skill-group h3{font-size:.78rem;font-family:var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--text);margin-bottom:12px;font-weight:500}
+
+  /* projects */
+  .projects{display:grid;gap:28px;margin-top:46px}
+  .card{
+    --mx:50%;--my:50%;
+    position:relative;border-radius:calc(var(--radius) + 4px);border:1px solid var(--line);
+    background:linear-gradient(180deg,var(--surface),var(--bg-2));overflow:hidden;
+    transition:border-color .3s,transform .4s var(--ease);
+  }
+  .card::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;
+    background:radial-gradient(520px circle at var(--mx) var(--my),rgba(45,212,191,.11),transparent 60%)}
+  .card:hover{border-color:rgba(45,212,191,.35)}
+  .card:hover::before{opacity:1}
+  .card-body{padding:clamp(24px,4vw,44px);position:relative}
+  .card-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;flex-wrap:wrap}
+  .num{font-family:var(--mono);font-size:.82rem;color:var(--accent);letter-spacing:.14em}
+  .period{font-family:var(--mono);font-size:.8rem;color:var(--muted);border:1px solid var(--line);padding:5px 12px;border-radius:999px}
+  .card h3{font-size:clamp(1.45rem,3vw,2.15rem);line-height:1.2;letter-spacing:-.02em;margin:14px 0 6px}
+  .card .sub{color:var(--warm);font-size:.95rem;font-weight:500;margin-bottom:16px}
+  .card .summary{color:var(--muted);max-width:760px;font-size:1.04rem}
+  .points{list-style:none;margin:26px 0 8px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px 34px}
+  .points li{position:relative;padding-left:26px;color:#c7d3ec;font-size:.97rem;line-height:1.55}
+  .points li::before{content:"";position:absolute;left:0;top:.55em;width:14px;height:2px;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+  .points li b{color:var(--text);font-weight:600}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .toggle .chev{transition:transform .35s var(--ease)}
+  .toggle[aria-expanded="true"] .chev{transform:rotate(180deg)}
+  .toggle[aria-expanded="true"]{border-color:rgba(45,212,191,.55);background:var(--surface-2)}
+
+  /* dropdown gallery */
+  .drop{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
+  .drop.open{grid-template-rows:1fr}
+  .drop > div{overflow:hidden}
+  .drop-inner{padding:0 clamp(24px,4vw,44px) clamp(24px,4vw,44px);display:grid;gap:18px;opacity:0;transform:translateY(14px);transition:opacity .5s .1s,transform .6s .1s var(--ease)}
+  .drop.open .drop-inner{opacity:1;transform:none}
+  .gallery{display:grid;gap:16px;grid-template-columns:1fr}
+  .gallery.split{grid-template-columns:minmax(240px,470px) 1fr;gap:clamp(20px,4vw,44px);align-items:center}
+  .legend{list-style:none;display:grid;gap:14px;counter-reset:l}
+  .legend li{counter-increment:l;display:grid;grid-template-columns:34px 1fr;gap:4px 14px;align-items:start;color:#c7d3ec;font-size:.96rem;line-height:1.5}
+  .legend li::before{content:counter(l);font-family:var(--mono);font-size:.78rem;color:var(--accent);border:1px solid rgba(45,212,191,.4);border-radius:50%;width:30px;height:30px;display:grid;place-items:center}
+  .legend b{color:var(--text);font-weight:600;display:block}
+  .legend h4{font-size:.78rem;font-family:var(--mono);letter-spacing:.16em;text-transform:uppercase;font-weight:500;color:var(--text);margin-bottom:4px}
+  .shot{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#050912;cursor:zoom-in;position:relative}
+  .shot img{width:100%;height:auto;transition:transform .6s var(--ease)}
+  .shot:hover img{transform:scale(1.035)}
+  .shot figcaption{padding:12px 16px;font-size:.88rem;color:var(--muted);border-top:1px solid var(--line);background:var(--surface)}
+  .note{font-size:.88rem;color:var(--muted);border-left:2px solid var(--warm);padding-left:14px}
+
+  /* contact */
+  .contact{padding-top:clamp(40px,6vw,80px);text-align:center;background:radial-gradient(60% 80% at 50% 100%,rgba(45,212,191,.12),transparent 70%)}
+  .contact .eyebrow{justify-content:center}
+  .contact .eyebrow::before{display:none}
+  .contact h2{font-size:clamp(2.2rem,6vw,4rem)}
+  .contact .lead{margin:0 auto}
+  .contact .cta{justify-content:center}
+  footer{padding:30px clamp(18px,5vw,64px);border-top:1px solid var(--line);color:var(--muted);font-size:.86rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  /* lightbox */
+  .lb{position:fixed;inset:0;z-index:100;background:rgba(4,8,18,.92);backdrop-filter:blur(8px);display:grid;place-items:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .3s}
+  .lb.open{opacity:1;pointer-events:auto}
+  .lb img{max-height:86vh;max-width:min(94vw,1100px);border-radius:12px;transform:scale(.96);transition:transform .35s var(--ease)}
+  .lb.open img{transform:none}
+  .lb button{position:absolute;top:18px;right:20px;background:var(--surface);color:var(--text);border:1px solid var(--line);width:44px;height:44px;border-radius:50%;font-size:1.3rem;cursor:pointer}
+  .lb p{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:var(--muted);font-size:.9rem;padding:0 20px}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+  .reveal.in{opacity:1;transform:none}
+  .hero .reveal{transform:translateY(22px)}
+
+  @media (max-width:860px){
+    .gallery.split{grid-template-columns:1fr}
+    .links li:not(:last-child){display:none}
+    .stats{grid-template-columns:repeat(2,1fr);margin-top:-20px}
+    .about-grid{grid-template-columns:1fr}
+    .points{grid-template-columns:1fr}
+  }
+  @media (max-width:520px){
+    .stat{padding:22px 18px}
+    .stat .n{font-size:1.7rem}
+    .stat .n em{font-size:.62em}
+    .stat .n{white-space:nowrap}
+    .btn{padding:12px 18px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;transition-delay:0s!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<nav id="nav">
+  <a class="brand" href="#top"><span class="dot"></span>Ismail Hussain</a>
+  <ul class="links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="traces" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="badge reveal"><b>MIET</b> &nbsp;|&nbsp; BEng Electrical and Electronic Engineering, Aston University</div>
+    <h1 class="reveal" style="--d:.08s">Ismail<br><span class="grad">Hussain</span></h1>
+    <p class="role reveal" style="--d:.16s">Electrical engineer focused on <strong id="word">power electronics</strong><span class="caret"></span></p>
+    <div class="cta reveal" style="--d:.24s">
+      <a class="btn primary" href="#projects">View projects
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+      <a class="btn" href="https://www.linkedin.com/in/ismail-hussain22/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11.5H3V9.75zm6.5 0h3.83v1.57h.06c.53-1 1.84-2.07 3.78-2.07 4.04 0 4.78 2.66 4.78 6.12v5.88h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75v5.29h-4V9.75z"/></svg>LinkedIn</a>
+      <a class="btn" href="#contact" data-mail>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Scroll</span><i></i></div>
+</header>
+
+<div class="stats-wrap">
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stat"><div class="n"><span data-count="92">92</span></div><p>tests in the final year project validation plan</p></div>
+      <div class="stat"><div class="n"><em>&plusmn;</em><span data-count="12">12</span><em> kV</em></div><p>ESD contact discharge sweep on placement</p></div>
+      <div class="stat"><div class="n"><span data-count="30">30</span><em> V</em></div><p>gate drive swing, +15 V to &minus;15 V, measured</p></div>
+      <div class="stat"><div class="n"><span data-count="12">12</span><em> months</em></div><p>industrial placement at Renishaw, 2024 to 2025</p></div>
+    </div>
+  </div>
+</div>
+
+<section id="about" class="about">
+  <div class="wrap">
+    <div class="eyebrow reveal">About</div>
+    <h2 class="reveal" style="--d:.06s">Hardware that gets built, tested and measured.</h2>
+    <div class="about-grid">
+      <div class="reveal" style="--d:.12s">
+        <p>I am an <b>electrical and electronic engineer</b> and a Member of the IET. My work spans power electronics, embedded firmware and PCB design, from schematic and layout through to soldering, bring-up and test.</p>
+        <p>The projects below cover an isolated gate drive for a three-phase converter, a smart-home controller built on the Matter standard, and a year of industrial placement in a professional electronics design team.</p>
+      </div>
+      <div class="reveal" style="--d:.2s">
+        <div class="skill-group">
+          <h3>Design and CAD</h3>
+          <div class="chips"><span class="chip">Zuken CR-8000</span><span class="chip">Altium Designer</span><span class="chip">Proteus</span><span class="chip">Fusion 360</span></div>
+        </div>
+        <div class="skill-group">
+          <h3>Simulation and embedded</h3>
+          <div class="chips"><span class="chip">MATLAB / Simulink</span><span class="chip">LTspice</span><span class="chip">C / C++</span><span class="chip">ESP-IDF</span><span class="chip">FreeRTOS</span><span class="chip">SoftConsole / Libero</span></div>
+        </div>
+        <div class="skill-group">
+          <h3>Lab and build</h3>
+          <div class="chips"><span class="chip">Advanced soldering (0402)</span><span class="chip">ESD testing</span><span class="chip">PCB debugging</span><span class="chip">Git</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" style="padding-top:20px">
+  <div class="wrap">
+    <div class="eyebrow reveal">Selected work</div>
+    <h2 class="reveal" style="--d:.06s">Projects</h2>
+    <p class="lead reveal" style="--d:.12s">Short summaries of each project. Open the photos on any card to see the hardware.</p>
+
+    <div class="projects">
+
+      <!-- 01 FYP -->
+      <article class="card reveal">
+        <div class="card-body">
+          <div class="card-top"><span class="num">01</span><span class="period">Sep 2025 to Apr 2026</span></div>
+          <h3>MACCS+: Matter-enabled curtain and lighting controller</h3>
+          <div class="sub">Final year project, BEng Electrical and Electronic Engineering</div>
+          <p class="summary">A self-designed smart curtain and LED lighting controller that joins a smart home through the Matter standard. It is controllable by voice, a web page, physical buttons or a schedule, and the buttons keep working with no network.</p>
+          <ul class="points">
+            <li><b>Custom power PCB</b> with reverse polarity protection, hardware soft start, polyfuses, a TVS diode and a 12 V to 5 V buck stage. The 5 V rail held 5.02 V under full load.</li>
+            <li><b>Firmware</b> in C and C++ on an ESP32-C6 using ESP-IDF and FreeRTOS, with limit switch interrupts, a stall timeout and saved position across power cycles.</li>
+            <li><b>Matter control</b> commissioned into Apple Home over Bluetooth LE, including Siri voice commands. Five control paths run at once without conflict.</li>
+            <li><b>Mechanical design</b> in Fusion 360: a belt-driven, centre-opening mechanism with 3D printed parts, including a sacrificial part that protects the assembly on overrun.</li>
+            <li><b>Validation:</b> 92 tests, with 83 passed, 7 partial and 2 failed. The failures are reported openly, including Alexa not discovering the device.</li>
+            <li><b>Debugging:</b> a limit switch feedback loop in the Matter delegate was traced to a command being written from a status callback, and fixed.</li>
+          </ul>
+          <div class="meta"><span class="chip">ESP32-C6</span><span class="chip">Matter</span><span class="chip">FreeRTOS</span><span class="chip">PCB design</span><span class="chip">Fusion 360</span></div>
+          <div class="actions">
+            <button class="btn toggle" aria-expanded="false" aria-controls="drop-fyp">View photos
+              <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+        </div>
+        <div class="drop" id="drop-fyp"><div><div class="drop-inner">
+          <div class="gallery split">
+            <figure class="shot tall" data-full="fyp-full.jpg" data-cap="MACCS+ assembled: custom power PCB, ESP32-C6, motor driver and geared motor in the printed housing, with the button panel in front">
+              <img src="fyp-full.jpg" alt="MACCS+ controller assembled in a 3D printed housing, showing the custom green power PCB with an ESP32-C6, a geared motor with belt pulley, and the five-button panel" loading="lazy">
+              <figcaption>Assembled controller, open housing</figcaption>
+            </figure>
+            <div>
+              <h4 class="legend-h" style="font-size:.78rem;font-family:var(--mono);letter-spacing:.16em;text-transform:uppercase;font-weight:500;margin-bottom:16px">What is in the photo</h4>
+              <ol class="legend">
+                <li><span><b>Custom power PCB</b>Holds the ESP32-C6 board, with protection and the 12 V to 5 V buck stage. Etched and soldered by hand.</span></li>
+                <li><span><b>Motor driver</b>The red H-bridge module that switches the motor direction and speed.</span></li>
+                <li><span><b>Geared motor and belt pulley</b>Drives the belt that moves the curtain carriages.</span></li>
+                <li><span><b>3D printed housing</b>Designed in Fusion 360 and screwed onto the aluminium rail.</span></li>
+                <li><span><b>Button panel</b>Five physical buttons that work without Wi-Fi.</span></li>
+              </ol>
+            </div>
+          </div>
+        </div></div></div>
+      </article>
+
+      <!-- 02 EE3PEC -->
+      <article class="card reveal">
+        <div class="card-body">
+          <div class="card-top"><span class="num">02</span><span class="period">Autumn 2025</span></div>
+          <h3>Three-phase AC-DC-AC converter and isolated gate drive</h3>
+          <div class="sub">EE3PEC power electronics paper, Aston University</div>
+          <p class="summary">A Simulink model of a rectifier and three-phase inverter, paired with a gate drive circuit that was designed, built and tested on the bench. Measured waveforms were compared against the simulation to validate the design.</p>
+          <ul class="points">
+            <li><b>Model:</b> single-phase then three-phase rectifier feeding a voltage-source inverter and a 20 kW balanced load, at a 50 Hz fundamental, modulation index 0.8, 750 Hz switching and 10 &micro;s dead-time.</li>
+            <li><b>Gate drive PCB</b> with galvanic isolation between the controller logic and the power stage, and matched tracks on both channels to keep signal delay equal.</li>
+            <li><b>Control:</b> PWM with dead-time generated on a Microsemi SmartFusion board, programmed with Libero and SoftConsole.</li>
+            <li><b>Results:</b> the gate drive swung between +15 V and &minus;15 V, about 30 V, with dead-time of about 8 &micro;s measured on the oscilloscope.</li>
+            <li><b>Debugging:</b> a transistor pin-out mismatch between the datasheet and the schematic library was caught during soldering, before power-up.</li>
+          </ul>
+          <div class="meta"><span class="chip">MATLAB / Simulink</span><span class="chip">Proteus</span><span class="chip">Gate drive</span><span class="chip">FPGA PWM</span></div>
+          <div class="actions">
+            <a class="btn primary" href="EE3PEC-Ismail-Hussain.pdf" target="_blank" rel="noopener">Read the paper (PDF)
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <button class="btn toggle" aria-expanded="false" aria-controls="drop-pec">View the PCB
+              <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+          </div>
+        </div>
+        <div class="drop" id="drop-pec"><div><div class="drop-inner">
+          <div class="gallery">
+            <figure class="shot" data-full="gate-drive-pcb.jpg" data-cap="Built and tested two-channel isolated gate drive PCB">
+              <img src="gate-drive-pcb.jpg" alt="Built two-channel isolated gate drive PCB with optocouplers, screw terminals and twisted-pair leads, photographed on a dark wooden surface" loading="lazy">
+              <figcaption>The built two-channel isolated gate drive board</figcaption>
+            </figure>
+          </div>
+        </div></div></div>
+      </article>
+
+      <!-- 03 Renishaw -->
+      <article class="card reveal">
+        <div class="card-body">
+          <div class="card-top"><span class="num">03</span><span class="period">2024 to 2025</span></div>
+          <h3>Electronics placement at Renishaw</h3>
+          <div class="sub">Industrial placement, Encoder Product Division</div>
+          <p class="summary">A year inside a professional electronics design team, working on PCB design, test planning and qualification testing for precision encoder products. This summary covers what I did at a general level only.</p>
+          <ul class="points">
+            <li><b>Test jig PCB redesigned from scratch</b> in Zuken CR-8000, working from legacy documentation. Obsolete parts were replaced and the board was made to fit the existing jig. It reached the board testing stage before the placement ended.</li>
+            <li><b>ESD qualification:</b> a self-directed contact discharge sweep up to &plusmn;12 kV on a replacement protection device, with a risk assessment completed first. I presented the findings to senior engineers, and the report was approved for production.</li>
+            <li><b>Protection investigation:</b> structured pulse testing, including at elevated temperature, to assess whether a protection component was needed. The results were reviewed and signed off by stakeholders.</li>
+            <li><b>Other work:</b> a PCB for a project at another company site, test plan writing, cable builds, and professional soldering training down to 0402 parts.</li>
+            <li><b>STEM Ambassador:</b> gave an engineering demonstration and careers talk to visiting school groups.</li>
+          </ul>
+          <div class="meta"><span class="chip">Zuken CR-8000</span><span class="chip">Altium Designer</span><span class="chip">ESD testing</span><span class="chip">Test planning</span></div>
+        </div>
+      </article>
+
+      <!-- 04 First-year team project: hidden until details are added -->
+      <article class="card reveal" id="firstyear" hidden>
+        <div class="card-body">
+          <div class="card-top"><span class="num">04</span><span class="period">First year</span></div>
+          <h3>First-year team project</h3>
+          <div class="sub">Aston University</div>
+          <p class="summary">Add a short summary here.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="eyebrow reveal">Contact</div>
+    <h2 class="reveal" style="--d:.06s">Get in touch</h2>
+    <p class="lead reveal" style="--d:.12s">Happy to talk about any of these projects, or about engineering work.</p>
+    <div class="cta reveal" style="--d:.18s">
+      <a class="btn primary" href="#" data-mail>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span id="mailtext">Send an email</span></a>
+      <a class="btn" href="https://www.linkedin.com/in/ismail-hussain22/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11.5H3V9.75zm6.5 0h3.83v1.57h.06c.53-1 1.84-2.07 3.78-2.07 4.04 0 4.78 2.66 4.78 6.12v5.88h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75v5.29h-4V9.75z"/></svg>LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>&copy; <span id="yr">2026</span> Ismail Hussain</span>
+  <span>Electrical and Electronic Engineer, MIET</span>
+</footer>
+
+<div class="lb" id="lb" aria-hidden="true" role="dialog" aria-label="Image viewer">
+  <button id="lbclose" aria-label="Close image">&times;</button>
+  <img id="lbimg" alt="">
+  <p id="lbcap"></p>
+</div>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $ = function(s,c){return (c||document).querySelector(s)};
+  var $$ = function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+
+  /* email assembled in script so it is not sitting in the page source as plain text */
+  var u = 'ismail.h2589', d = 'gmail.com', addr = u + '@' + d;
+  $$('[data-mail]').forEach(function(a){ a.href = 'mailto:' + addr; });
+  var mt = $('#mailtext'); if (mt) mt.textContent = addr;
+  $('#yr').textContent = new Date().getFullYear();
+
+  /* nav, progress */
+  var nav = $('#nav'), bar = $('#progress');
+  var links = $$('.links a');
+  function onScroll(){
+    var y = window.scrollY, h = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = 'scaleX(' + (h > 0 ? y / h : 0) + ')';
+    nav.classList.toggle('scrolled', y > 24);
+  }
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  var secs = ['about','projects','contact'].map(function(id){return document.getElementById(id)});
+  var so = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(l){ l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id); });
+      }
+    });
+  }, {rootMargin:'-45% 0px -50% 0px'});
+  secs.forEach(function(s){ so.observe(s); });
+  var topO = new IntersectionObserver(function(es){
+    if(es[0].isIntersecting) links.forEach(function(l){ l.classList.remove('active'); });
+  }, {threshold:.6});
+  topO.observe($('#top'));
+
+  /* reveal on scroll */
+  var ro = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target); } });
+  }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
+  $$('.reveal').forEach(function(el){ ro.observe(el); });
+
+  /* counters */
+  function runCount(el){
+    var to = +el.dataset.count, t0 = null, dur = 1400;
+    if (reduce){ el.textContent = to; return; }
+    function step(ts){
+      if(!t0) t0 = ts;
+      var p = Math.min((ts - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(to * e);
+      if(p < 1) requestAnimationFrame(step);
+    }
+    el.textContent = 0; requestAnimationFrame(step);
+  }
+  var co = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ runCount(e.target); co.unobserve(e.target); } });
+  }, {threshold:.6});
+  $$('[data-count]').forEach(function(el){ co.observe(el); });
+
+  /* rotating role words */
+  var words = ['power electronics','embedded systems','PCB design','hardware testing'];
+  var wEl = $('#word'), wi = 0, ci = words[0].length, del = true;
+  if(!reduce){
+    (function tick(){
+      var w = words[wi], delay = del ? 38 : 70;
+      if(del){ ci--; if(ci <= 0){ del = false; wi = (wi + 1) % words.length; ci = 0; delay = 260; } }
+      else { ci++; if(ci >= words[wi].length){ del = true; delay = 1700; } }
+      wEl.textContent = words[wi].slice(0, Math.max(ci,0)) || ' ';
+      setTimeout(tick, delay);
+    })();
+  }
+
+  /* card spotlight */
+  $$('.card').forEach(function(c){
+    c.addEventListener('pointermove', function(e){
+      var r = c.getBoundingClientRect();
+      c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  /* dropdown galleries */
+  $$('.toggle').forEach(function(b){
+    b.addEventListener('click', function(){
+      var panel = document.getElementById(b.getAttribute('aria-controls'));
+      var open = b.getAttribute('aria-expanded') === 'true';
+      b.setAttribute('aria-expanded', String(!open));
+      panel.classList.toggle('open', !open);
+      var label = b.firstChild;
+      if(label && label.nodeType === 3){
+        label.nodeValue = label.nodeValue.replace(open ? /Hide/ : /View/, open ? 'View' : 'Hide');
+      }
+    });
+  });
+
+  /* lightbox */
+  var lb = $('#lb'), lbimg = $('#lbimg'), lbcap = $('#lbcap'), last = null;
+  function openLB(fig){
+    last = document.activeElement;
+    lbimg.src = fig.dataset.full; lbimg.alt = $('img', fig).alt; lbcap.textContent = fig.dataset.cap || '';
+    lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); $('#lbclose').focus();
+  }
+  function closeLB(){
+    lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); if(last) last.focus();
+  }
+  $$('.shot').forEach(function(f){
+    f.tabIndex = 0;
+    f.addEventListener('click', function(){ openLB(f); });
+    f.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openLB(f); } });
+  });
+  lb.addEventListener('click', function(e){ if(e.target !== lbimg) closeLB(); });
+  addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLB(); });
+
+  /* hero circuit traces */
+  var cv = $('#traces'), ctx = cv.getContext('2d'), paths = [], pulses = [], W = 0, H = 0, dpr = 1, running = true, G = 34;
+  function rnd(a,b){ return a + Math.random() * (b - a); }
+  function build(){
+    dpr = Math.min(devicePixelRatio || 1, 2);
+    var r = cv.getBoundingClientRect(); W = r.width; H = r.height;
+    cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    paths = []; pulses = [];
+    var count = Math.round(Math.min(46, Math.max(18, W * H / 26000)));
+    var O = [[1,0],[0,1],[-1,0],[0,-1]];
+    for(var i = 0; i < count; i++){
+      var x = Math.round(rnd(0, W) / G) * G, y = Math.round(rnd(0, H) / G) * G;
+      var pts = [[x,y]], di = Math.floor(rnd(0,4)), segs = Math.floor(rnd(3,7));
+      for(var s = 0; s < segs; s++){
+        var len = Math.floor(rnd(2,6)) * G, dv = O[di];
+        x += dv[0] * len; y += dv[1] * len; pts.push([x,y]);
+        var nd = (di + (Math.random() < .5 ? 1 : 3)) % 4, nv = O[nd], c = G * .6;
+        x += (dv[0] + nv[0]) * c; y += (dv[1] + nv[1]) * c; pts.push([x,y]);
+        di = nd;
+      }
+      var cum = [0], total = 0;
+      for(var j = 1; j < pts.length; j++){
+        total += Math.hypot(pts[j][0] - pts[j-1][0], pts[j][1] - pts[j-1][1]); cum.push(total);
+      }
+      paths.push({pts:pts, cum:cum, total:total});
+    }
+    for(var p = 0; p < paths.length; p++){
+      if(Math.random() < .55) pulses.push({p:p, d:rnd(0, paths[p].total), v:rnd(40,95)});
+    }
+  }
+  function at(path, d){
+    var c = path.cum, i = 1;
+    while(i < c.length - 1 && c[i] < d) i++;
+    var t = (d - c[i-1]) / (c[i] - c[i-1] || 1), a = path.pts[i-1], b = path.pts[i];
+    return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t];
+  }
+  function drawStatic(){
+    ctx.clearRect(0,0,W,H);
+    ctx.lineWidth = 1.4; ctx.lineJoin = 'round'; ctx.lineCap = 'round';
+    paths.forEach(function(pa){
+      ctx.strokeStyle = 'rgba(94,234,212,.22)'; ctx.beginPath();
+      pa.pts.forEach(function(q,i){ i ? ctx.lineTo(q[0],q[1]) : ctx.moveTo(q[0],q[1]); }); ctx.stroke();
+      [pa.pts[0], pa.pts[pa.pts.length - 1]].forEach(function(q){
+        ctx.fillStyle = 'rgba(10,17,32,1)'; ctx.strokeStyle = 'rgba(94,234,212,.4)';
+        ctx.beginPath(); ctx.arc(q[0],q[1],3.2,0,6.283); ctx.fill(); ctx.stroke();
+      });
+    });
+  }
+  var lastT = 0;
+  function frame(ts){
+    if(!running){ return; }
+    var dt = Math.min((ts - lastT) / 1000, .05); lastT = ts;
+    drawStatic();
+    pulses.forEach(function(pu){
+      var pa = paths[pu.p]; pu.d += pu.v * dt;
+      if(pu.d > pa.total + 40){ pu.d = -20; pu.v = rnd(40,95); }
+      for(var k = 0; k < 14; k++){
+        var dd = pu.d - k * 4; if(dd < 0 || dd > pa.total) continue;
+        var q = at(pa, dd); ctx.fillStyle = 'rgba(94,234,212,' + (.5 * (1 - k / 14)) + ')';
+        ctx.beginPath(); ctx.arc(q[0], q[1], 2.4 - k * .1, 0, 6.283); ctx.fill();
+      }
+    });
+    requestAnimationFrame(frame);
+  }
+  function start(){ build(); drawStatic(); if(!reduce){ running = true; lastT = performance.now(); requestAnimationFrame(frame); } }
+  start();
+  var rt; addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(function(){ running = false; setTimeout(start, 30); }, 200); });
+  new IntersectionObserver(function(es){
+    var vis = es[0].isIntersecting;
+    if(vis && !running && !reduce){ running = true; lastT = performance.now(); requestAnimationFrame(frame); }
+    if(!vis) running = false;
+  }).observe($('#top'));
+  document.addEventListener('visibilitychange', function(){ if(document.hidden) running = false; });
+
+  /* un-hide the first-year card automatically once it has real text */
+  var fy = $('#firstyear');
+  if(fy && fy.dataset.ready === 'true') fy.hidden = false;
+})();
+</script>
+</body>
+</html>

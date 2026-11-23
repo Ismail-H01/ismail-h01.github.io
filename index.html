@@ -3,36 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ismail Hussain | Electrical and Electronic Engineer</title>
-<meta name="description" content="Ismail Hussain, electrical and electronic engineer (First Class BEng (Hons), MIET). Power electronics, embedded systems and PCB design: projects, experience and contact details.">
+<title>Ismail Hussain | Graduate Electrical Engineer</title>
+<meta name="description" content="Ismail Hussain, Graduate Electrical Engineer at Amey Consulting. First Class BEng (Hons) Electrical and Electronic Engineering, MIET. Projects, experience, leadership and contact details.">
 <meta name="author" content="Ismail Hussain">
 <meta name="theme-color" content="#0a1120">
 <link rel="canonical" href="https://ismail-h01.github.io/">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ismail Hussain">
-<meta property="og:title" content="Ismail Hussain | Electrical and Electronic Engineer">
-<meta property="og:description" content="First Class BEng (Hons), MIET. Power electronics, embedded systems and PCB design. Projects, experience and contact details.">
+<meta property="og:title" content="Ismail Hussain | Graduate Electrical Engineer">
+<meta property="og:description" content="Graduate Electrical Engineer at Amey Consulting. First Class BEng (Hons), MIET. Projects, experience and leadership.">
 <meta property="og:url" content="https://ismail-h01.github.io/">
 <meta property="og:image" content="https://ismail-h01.github.io/assets/img/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Ismail Hussain, Electrical and Electronic Engineer. First Class BEng (Hons), MIET.">
+<meta property="og:image:alt" content="Ismail Hussain, Graduate Electrical Engineer. First Class BEng (Hons), MIET.">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
 <script>
-/* Runs before first paint: marks JS as available and applies the saved or system theme (no flash). */
+/* Runs before first paint. Dark is the default; a theme the visitor chose before is remembered. */
 (function () {
   var root = document.documentElement, t = null;
   root.classList.remove('no-js'); root.classList.add('js');
   try { t = localStorage.getItem('theme'); } catch (e) {}
-  if (t !== 'light' && t !== 'dark') {
-    t = window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-  }
-  root.setAttribute('data-theme', t);
+  root.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
 })();
 </script>
 <link rel="stylesheet" href="css/site.css">
@@ -44,11 +41,12 @@
   "name": "Ismail Hussain",
   "url": "https://ismail-h01.github.io/",
   "image": "https://ismail-h01.github.io/assets/img/og-image.png",
-  "jobTitle": "Electrical and Electronic Engineer",
-  "description": "Electrical and electronic engineer with a First Class BEng (Hons) from Aston University. Power electronics, embedded systems and PCB design.",
+  "jobTitle": "Graduate Electrical Engineer",
+  "worksFor": { "@type": "Organization", "name": "Amey Consulting" },
+  "description": "Graduate Electrical Engineer with a First Class BEng (Hons) in Electrical and Electronic Engineering from Aston University.",
   "alumniOf": { "@type": "CollegeOrUniversity", "name": "Aston University" },
   "memberOf": { "@type": "Organization", "name": "Institution of Engineering and Technology" },
-  "knowsAbout": ["Power electronics", "Embedded systems", "PCB design", "ESD testing", "Highway lighting design"],
+  "knowsAbout": ["Electrical design", "Highway lighting design", "Electronics", "PCB design", "Embedded systems", "Power electronics"],
   "sameAs": ["https://www.linkedin.com/in/ismail-hussain22/"]
 }
 </script>
@@ -86,14 +84,12 @@
   <!-- ============================ HERO ============================ -->
   <section class="hero" id="hero" aria-labelledby="hero-title">
     <canvas id="traces" aria-hidden="true"></canvas>
-    <div class="wrap">
-      <p class="badge reveal"><b>First Class</b> BEng (Hons) <span class="sep" aria-hidden="true">|</span> <b>MIET</b></p>
-      <h1 id="hero-title" class="reveal" style="--d:.08s">Ismail<br><span class="grad">Hussain</span></h1>
-      <p class="role reveal" style="--d:.16s">Electrical and electronic engineer focused on
-        <strong class="role-static">power electronics, embedded systems and PCB design</strong><strong class="role-typed" id="word" aria-hidden="true"></strong><span class="caret" aria-hidden="true"></span>
-      </p>
-      <p class="hero-lead reveal" style="--d:.2s">I design, build and test electronics: from isolated gate drives and PCB layout to firmware for smart-home devices.</p>
-      <div class="cta reveal" style="--d:.26s">
+    <div class="wrap hero-inner" id="heroInner">
+      <p class="badge intro" style="--d:.05s"><b>First Class</b> BEng (Hons) <span class="sep" aria-hidden="true">|</span> <b>MIET</b></p>
+      <h1 id="hero-title" class="hero-name"><span class="line" data-letters>Ismail</span><span class="line grad" data-letters>Hussain</span></h1>
+      <p class="role intro" style="--d:.75s">Graduate Electrical Engineer at <strong>Amey Consulting</strong></p>
+      <p class="hero-lead intro" style="--d:.85s">Electrical engineer with experience across infrastructure design, electronics and product development. I take work from first concept to a delivered, production-ready design.</p>
+      <div class="cta intro" style="--d:.95s">
         <a class="btn primary" href="#work">View my work
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
         <a class="btn" href="assets/docs/Ismail-Hussain-CV.pdf" target="_blank" rel="noopener">
@@ -103,7 +99,7 @@
         <a class="btn" href="#contact" data-mail>
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
       </div>
-      <ul class="hero-meta reveal" style="--d:.34s" aria-label="Background">
+      <ul class="hero-meta intro" style="--d:1.05s" aria-label="Background">
         <li>Now <b>Amey Consulting</b></li>
         <li>Previously <b>Renishaw</b></li>
         <li>Graduated <b>Aston University</b></li>
@@ -115,34 +111,41 @@
   <!-- ============================ HIGHLIGHTS ============================ -->
   <section class="stats-wrap" aria-label="Highlights">
     <div class="wrap">
-      <ul class="stats reveal">
-        <li class="stat"><div class="n"><span>1st</span></div><p>Class honours, BEng (Hons) Electrical and Electronic Engineering, Aston University</p></li>
-        <li class="stat"><div class="n"><span data-count="92">92</span></div><p>tests in the final year project validation plan (83 passed)</p></li>
-        <li class="stat"><div class="n"><em>&plusmn;</em><span data-count="12">12</span><em> kV</em></div><p>ESD contact discharge sweep carried out on placement</p></li>
-        <li class="stat"><div class="n"><span data-count="5">5</span></div><p>leadership, mentoring and outreach roles</p></li>
+      <ul class="stats reveal" data-reveal="rise">
+        <li class="stat"><div class="n"><span>1st</span></div><p>Class Honours, BEng (Hons) Electrical and Electronic Engineering, Aston University</p></li>
+        <li class="stat" style="--d:.08s"><div class="n n-word"><span>End&#8209;to&#8209;end</span></div><p>from first concept through design, testing and release to production</p></li>
+        <li class="stat" style="--d:.16s"><div class="n"><span>MIET</span></div><p>Member of the Institution of Engineering and Technology</p></li>
+        <li class="stat" style="--d:.24s"><div class="n"><span data-count="5">5</span></div><p>leadership, mentoring and outreach roles</p></li>
       </ul>
     </div>
   </section>
 
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Electrical design</span><span>Highway lighting</span><span>Electronics</span><span>PCB design</span><span>Embedded systems</span><span>Power electronics</span><span>Testing and validation</span><span>Standards compliance</span><span>Client delivery</span>
+      <span>Electrical design</span><span>Highway lighting</span><span>Electronics</span><span>PCB design</span><span>Embedded systems</span><span>Power electronics</span><span>Testing and validation</span><span>Standards compliance</span><span>Client delivery</span>
+    </div>
+  </div>
+
   <!-- ============================ ABOUT ============================ -->
   <section id="about" aria-labelledby="about-title">
     <div class="wrap">
-      <p class="eyebrow reveal">About</p>
-      <h2 id="about-title" class="reveal" style="--d:.06s">Hardware that gets built, tested and measured.</h2>
+      <p class="eyebrow reveal"><span class="eb-n">01</span>About</p>
+      <h2 id="about-title" class="split">Engineering from first idea to final delivery.</h2>
       <div class="about-grid">
-        <div class="prose reveal" style="--d:.12s">
-          <p>I am an <b>electrical and electronic engineer</b> with a <b>First Class BEng (Hons)</b> from Aston University and a year of industrial placement at Renishaw. I like the point where a design meets the bench: laying out a board, getting it built, and measuring whether it does what the simulation said it would.</p>
-          <p>My projects include an isolated gate drive for a three-phase converter, a smart-home controller built on the Matter standard with custom power electronics and firmware, and PCB redesign and ESD qualification work on placement. Alongside the technical work I have represented students at school and course level, mentored through the Royal Academy of Engineering, and spoken to school groups as a STEM Ambassador.</p>
-          <p>I now work in highway and street lighting design at Amey Consulting, applying British Standards and photometric analysis to real schemes.</p>
+        <div class="prose">
+          <p class="scrub">I am a Graduate Electrical Engineer at Amey Consulting with a First Class BEng (Hons) from Aston University. I understand the full engineering journey: shaping a concept, designing it, proving it against the requirements and seeing it through to production and use.</p>
+          <p class="reveal">My experience covers lighting design for public highways, a year in a professional electronics design team at Renishaw, and university projects in power electronics and embedded systems. Working across these areas means I pick up new tools and standards quickly and can work comfortably between disciplines.</p>
+          <p class="reveal">Alongside the technical work I represented students across Aston's School of Engineering and Physical Sciences, mentor through the Royal Academy of Engineering and speak to school groups as a STEM Ambassador.</p>
         </div>
-        <aside class="glance reveal" style="--d:.2s" aria-label="At a glance">
+        <aside class="glance reveal" data-reveal="slide" aria-label="At a glance">
           <h3>At a glance</h3>
           <dl>
+            <div><dt>Role</dt><dd>Graduate Electrical Engineer, Amey Consulting</dd></div>
             <div><dt>Degree</dt><dd>BEng (Hons) Electrical and Electronic Engineering, <b>First Class Honours</b></dd></div>
             <div><dt>University</dt><dd>Aston University, including a year in industry</dd></div>
             <div><dt>Membership</dt><dd>Member of the IET (MIET)</dd></div>
-            <div><dt>Now</dt><dd>Highway and street lighting design, Amey Consulting</dd></div>
-            <div><dt>Strengths</dt><dd>Power electronics, embedded systems, PCB design, testing</dd></div>
+            <div><dt>Previously</dt><dd>Industrial placement, electronics, Renishaw</dd></div>
             <div><dt>Based</dt><dd>West Midlands, UK</dd></div>
           </dl>
         </aside>
@@ -153,14 +156,14 @@
   <!-- ============================ WORK ============================ -->
   <section id="work" aria-labelledby="work-title">
     <div class="wrap">
-      <p class="eyebrow reveal">Selected work</p>
-      <h2 id="work-title" class="reveal" style="--d:.06s">Projects</h2>
-      <p class="lead reveal" style="--d:.12s">Three projects, each with what I did, how I checked that it worked, and what came out. Open the photos and figures on any card to see the hardware.</p>
+      <p class="eyebrow reveal"><span class="eb-n">02</span>Selected work</p>
+      <h2 id="work-title" class="split">Projects</h2>
+      <p class="lead reveal">Three projects, each showing the problem, the approach and the measured result. Open the photos and figures on any card to see the hardware.</p>
 
       <div class="projects">
 
         <!-- ---------- 01 MACCS+ ---------- -->
-        <article class="card reveal" id="p-maccs" data-skills="proteus fusion c espidf freertos matter debug soldering git" aria-labelledby="t-maccs">
+        <article class="card reveal" data-reveal="card" id="p-maccs" data-skills="proteus fusion c espidf freertos matter debug soldering git" aria-labelledby="t-maccs">
           <div class="card-body">
             <div class="card-top"><span class="num">01</span><span class="period">Sep 2025 to Apr 2026</span></div>
             <h3 id="t-maccs">MACCS+: Matter-enabled curtain and lighting controller</h3>
@@ -194,7 +197,7 @@
             </div>
           </div>
           <div class="drop" id="drop-maccs" role="region" aria-label="MACCS+ photos"><div><div class="drop-inner">
-            <div class="gallery split">
+            <div class="gallery split-g">
               <figure class="shot">
                 <button class="shot-open" type="button" data-gallery="maccs" data-full="assets/img/maccs-build.jpg" data-caption="MACCS+ assembled: custom power PCB, ESP32-C6, motor driver and geared motor in the printed housing, with the button panel in front" aria-label="Enlarge photo: MACCS+ assembled controller">
                   <img src="assets/img/maccs-build.jpg" width="1269" height="1458" loading="lazy" alt="MACCS+ controller assembled in a 3D printed housing, showing the custom green power PCB with an ESP32-C6, a geared motor with belt pulley, and the five-button panel">
@@ -216,7 +219,7 @@
         </article>
 
         <!-- ---------- 02 EE3PEC ---------- -->
-        <article class="card reveal" id="p-pec" data-skills="simulink proteus softconsole scope debug soldering" aria-labelledby="t-pec">
+        <article class="card reveal" data-reveal="card" id="p-pec" data-skills="simulink proteus softconsole scope debug soldering" aria-labelledby="t-pec">
           <div class="card-body">
             <div class="card-top"><span class="num">02</span><span class="period">Autumn 2025</span></div>
             <h3 id="t-pec">Three-phase AC-DC-AC converter and isolated gate drive</h3>
@@ -288,24 +291,24 @@
         </article>
 
         <!-- ---------- 03 Renishaw ---------- -->
-        <article class="card reveal" id="p-renishaw" data-skills="zuken altium ltspice esd debug soldering" aria-labelledby="t-renishaw">
+        <article class="card reveal" data-reveal="card" id="p-renishaw" data-skills="zuken altium ltspice esd debug soldering" aria-labelledby="t-renishaw">
           <div class="card-body">
             <div class="card-top"><span class="num">03</span><span class="period">2024 to 2025</span></div>
             <h3 id="t-renishaw">Electronics placement at Renishaw</h3>
             <p class="sub">Industrial placement, Encoder Product Division</p>
             <div class="card-grid">
               <div class="card-main">
-                <p class="summary">A year inside a professional electronics design team, working on PCB design, test planning and qualification testing for precision encoder products. This summary stays at a general level.</p>
+                <p class="summary">A year inside a professional electronics design team, working on PCB design, test planning and qualification testing for precision encoder products, from early design through to production approval. This summary stays at a general level.</p>
                 <ul class="points">
                   <li><b>Test jig PCB redesigned from scratch</b> in Zuken CR-8000, working from legacy documentation. Obsolete parts were replaced and the board was made to fit the existing jig. It reached the board testing stage before the placement ended.</li>
                   <li><b>ESD qualification:</b> a self-directed contact discharge sweep up to &plusmn;12 kV on a replacement protection device, with a risk assessment completed first. I presented the findings to senior engineers, and the report was approved for production.</li>
                   <li><b>Protection investigation:</b> structured pulse testing, including at elevated temperature, to assess whether a protection component was needed. The results were reviewed and signed off by stakeholders.</li>
-                  <li><b>Other work:</b> a PCB for a project at another company site, test plan writing, cable builds, and professional soldering training down to 0402 parts.</li>
-                  <li><b>Outreach:</b> engineering demonstrations and a careers talk as a STEM Ambassador, and a second-place finish in the Early Careers Network Challenge (see Leadership).</li>
+                  <li><b>Other work:</b> a PCB for a project at another company site, test plan writing and cable builds.</li>
+                  <li><b>Training:</b> Renishaw's basic (12 hours) and advanced (24 hours) soldering courses, down to 0402 parts with solder paste under a microscope, and on-site Zuken CR-8000 training.</li>
                 </ul>
                 <ul class="results" aria-label="Key results">
-                  <li><strong>&plusmn;12 kV</strong><span>ESD sweep, report approved for production</span></li>
-                  <li><strong>12 months</strong><span>in an electronics design team</span></li>
+                  <li><strong>Approved</strong><span>ESD qualification report released for production</span></li>
+                  <li><strong>12 months</strong><span>in a professional electronics design team</span></li>
                 </ul>
               </div>
               <dl class="facts">
@@ -321,73 +324,52 @@
     </div>
   </section>
 
-  <!-- ============================ APPROACH ============================ -->
-  <section id="approach" aria-labelledby="approach-title">
-    <div class="wrap">
-      <p class="eyebrow reveal">How I work</p>
-      <h2 id="approach-title" class="reveal" style="--d:.06s">Habits that show up in the projects.</h2>
-      <ul class="approach">
-        <li class="reveal">
-          <span class="ico" aria-hidden="true">01</span>
-          <h3>Check against the source</h3>
-          <p>Hand measurements suggested 18 mm hole spacing on the motor bracket. The datasheet said 17 mm. Dimensions, pin-outs and ratings get checked against primary documents before anything is printed or soldered, which also caught a transistor pin-out mismatch on the gate drive board.</p>
-          <a href="#p-maccs">See MACCS+</a>
-        </li>
-        <li class="reveal" style="--d:.08s">
-          <span class="ico" aria-hidden="true">02</span>
-          <h3>Test it, then report what happened</h3>
-          <p>The final year project was validated against 92 tests. The results list seven partial passes and two failures with causes where known. A result that cannot yet be explained is still a result worth recording.</p>
-          <a href="#p-maccs">See the results</a>
-        </li>
-        <li class="reveal" style="--d:.16s">
-          <span class="ico" aria-hidden="true">03</span>
-          <h3>Keep layers independent</h3>
-          <p>The motor driver knows nothing about Matter, and the limit switches stop the motor whatever the software believes. Separating hardware drivers from protocol code made faults far easier to isolate.</p>
-          <a href="#p-maccs">See the design</a>
-        </li>
-        <li class="reveal" style="--d:.24s">
-          <span class="ico" aria-hidden="true">04</span>
-          <h3>Learn the tool, keep the fundamentals</h3>
-          <p>Proteus fundamentals carried over to Altium and Zuken CR-8000. CAD was new for the mechanical design, and ESD testing was new on placement, so each was learned in small steps before the real work started.</p>
-          <a href="#p-renishaw">See the placement</a>
-        </li>
-      </ul>
-    </div>
-  </section>
-
   <!-- ============================ EXPERIENCE ============================ -->
   <section id="experience" aria-labelledby="exp-title">
     <div class="wrap">
-      <p class="eyebrow reveal">Experience</p>
-      <h2 id="exp-title" class="reveal" style="--d:.06s">Where I have worked and studied.</h2>
+      <p class="eyebrow reveal"><span class="eb-n">03</span>Experience</p>
+      <h2 id="exp-title" class="split">Where I have worked and studied.</h2>
 
-      <ol class="timeline">
-        <li class="t-item reveal" id="x-amey" data-skills="autocad lightingreality bs5489 bs13201">
+      <ol class="timeline" id="timeline">
+        <li class="t-progress" aria-hidden="true"><span id="tProgress"></span></li>
+        <li class="t-item reveal" data-reveal="slide" id="x-amey" data-skills="autocad lightingreality bs5489 bs13201 comms">
           <span class="t-dot" aria-hidden="true"></span>
           <div class="t-card">
-            <p class="t-date">2026 to present</p>
-            <h3>Highway and street lighting design</h3>
-            <p class="t-org">Amey Consulting</p>
+            <p class="t-date">Sep 2026 to present</p>
+            <h3>Graduate Electrical Engineer</h3>
+            <p class="t-org">Amey Consulting, highway lighting design</p>
+            <p class="t-intro">I take client lighting proposals from the initial brief to the final design deliverable, for upgrades to existing lighting, new column installations and new developments.</p>
+            <ol class="flow" aria-label="How a lighting scheme is delivered">
+              <li style="--i:0"><b>Brief</b><span>Area and requirements from the client</span></li>
+              <li style="--i:1"><b>Survey</b><span>OS mapping and utility records</span></li>
+              <li style="--i:2"><b>Classify</b><span>M, C or P lighting class</span></li>
+              <li style="--i:3"><b>Calculate</b><span>Lighting Reality design</span></li>
+              <li style="--i:4"><b>Draw</b><span>AutoCAD layout drawings</span></li>
+              <li style="--i:5"><b>Deliver</b><span>Final design to the client</span></li>
+            </ol>
             <ul>
-              <li>Produces photometric calculations in Lighting Reality and lighting layout drawings in AutoCAD.</li>
-              <li>Applies BS 5489-1 and BS EN 13201 to highway and street lighting schemes.</li>
+              <li>Own each proposal from start to finish and act as the point of contact for client queries.</li>
+              <li>Set up Ordnance Survey (OS) mapping tiles in AutoCAD and produce drawings of the proposed works, with every column and lantern placed at its exact coordinates.</li>
+              <li>Assess each area and assign an M, C or P lighting class using BS 5489-1, then design in Lighting Reality to meet the performance requirements of BS EN 13201-2.</li>
+              <li>Obtain and review statutory utility records (stats packs) for overhead lines, underground BT, HV and LV cables, and water and gas mains, so every design is safe to build.</li>
+              <li>Work on developer schemes under the Highways Act 1980: Section 278 agreements for works to the existing public highway, and Section 38 agreements for new roads to be adopted by the highway authority.</li>
             </ul>
           </div>
         </li>
-        <li class="t-item reveal" id="x-renishaw" data-skills="zuken altium ltspice esd debug soldering">
+        <li class="t-item reveal" data-reveal="slide" id="x-renishaw" data-skills="zuken altium ltspice esd debug soldering present">
           <span class="t-dot" aria-hidden="true"></span>
           <div class="t-card">
             <p class="t-date">2024 to 2025</p>
             <h3>Industrial Placement, Electronics</h3>
             <p class="t-org">Renishaw plc, Encoder Product Division</p>
             <ul>
-              <li>Redesigned a production test jig PCB from scratch and led a self-directed ESD qualification up to &plusmn;12 kV.</li>
-              <li>Ran structured pulse testing, wrote test plans and built cables; trained in professional soldering down to 0402 parts.</li>
+              <li>Redesigned a production test jig PCB from scratch and led a self-directed ESD qualification that was approved for production.</li>
+              <li>Ran structured pulse testing, wrote test plans and presented results to senior engineers and stakeholders.</li>
               <li><a href="#p-renishaw">Read the placement summary</a></li>
             </ul>
           </div>
         </li>
-        <li class="t-item reveal" id="x-aston" data-skills="proteus simulink fusion c espidf freertos matter softconsole scope">
+        <li class="t-item reveal" data-reveal="slide" id="x-aston" data-skills="proteus simulink fusion c espidf freertos matter softconsole scope">
           <span class="t-dot" aria-hidden="true"></span>
           <div class="t-card">
             <p class="t-date">Graduated 2026</p>
@@ -395,18 +377,16 @@
             <p class="t-org">Aston University, First Class Honours</p>
             <ul>
               <li>Final year project MACCS+ and the EE3PEC converter and gate drive paper (see Work).</li>
-              <li>School Rep for Engineering and Physical Sciences and Student Rep for Electrical and Electronic Engineering.</li>
+              <li>School Rep for Engineering and Physical Sciences and Student Rep for Electrical and Electronic Engineering (see Leadership).</li>
             </ul>
           </div>
         </li>
       </ol>
 
-      <h3 class="sub-h reveal">Education and credentials</h3>
+      <h3 class="sub-h reveal">Education and membership</h3>
       <ul class="creds">
-        <li class="reveal"><span class="cred-k">Degree</span><h4>First Class Honours</h4><p>BEng (Hons) Electrical and Electronic Engineering, Aston University.</p></li>
-        <li class="reveal" style="--d:.06s"><span class="cred-k">Membership</span><h4>MIET</h4><p>Member of the Institution of Engineering and Technology.</p></li>
-        <li class="reveal" style="--d:.12s"><span class="cred-k">Training</span><h4>Professional soldering</h4><p>Renishaw basic (12 hours) and advanced (24 hours) courses, including 0402 parts with solder paste under a microscope.</p></li>
-        <li class="reveal" style="--d:.18s"><span class="cred-k">Training</span><h4>Software and programming</h4><p>Zuken CR-8000 on-site training (one day) and a 40-hour C programming course.</p></li>
+        <li class="reveal" data-reveal="rise"><span class="cred-k">Degree</span><h4>First Class Honours</h4><p>BEng (Hons) Electrical and Electronic Engineering, Aston University, including a year in industry.</p></li>
+        <li class="reveal" data-reveal="rise" style="--d:.08s"><span class="cred-k">Membership</span><h4>MIET</h4><p>Member of the Institution of Engineering and Technology.</p></li>
       </ul>
     </div>
   </section>
@@ -414,53 +394,62 @@
   <!-- ============================ SKILLS ============================ -->
   <section id="skills" aria-labelledby="skills-title">
     <div class="wrap">
-      <p class="eyebrow reveal">Skills</p>
-      <h2 id="skills-title" class="reveal" style="--d:.06s">Tools I have used in real work.</h2>
-      <p class="lead reveal" style="--d:.12s">Select a skill to see where it was used.</p>
-      <div class="skill-grid reveal" style="--d:.16s">
-        <div class="skill-group">
-          <h3>PCB and CAD</h3>
+      <p class="eyebrow reveal"><span class="eb-n">04</span>Skills</p>
+      <h2 id="skills-title" class="split">Tools I have used in real work.</h2>
+      <p class="lead reveal">Select a skill to see where it was used.</p>
+      <div class="skill-grid">
+        <div class="skill-group reveal" data-reveal="rise">
+          <h3>Design and CAD</h3>
           <div class="chips">
+            <button type="button" class="skill" data-skill="autocad" aria-pressed="false">AutoCAD</button>
             <button type="button" class="skill" data-skill="zuken" aria-pressed="false">Zuken CR-8000</button>
             <button type="button" class="skill" data-skill="altium" aria-pressed="false">Altium Designer</button>
             <button type="button" class="skill" data-skill="proteus" aria-pressed="false">Proteus</button>
             <button type="button" class="skill" data-skill="fusion" aria-pressed="false">Fusion 360</button>
-            <button type="button" class="skill" data-skill="autocad" aria-pressed="false">AutoCAD</button>
           </div>
         </div>
-        <div class="skill-group">
-          <h3>Simulation</h3>
+        <div class="skill-group reveal" data-reveal="rise" style="--d:.06s">
+          <h3>Simulation and calculation</h3>
           <div class="chips">
+            <button type="button" class="skill" data-skill="lightingreality" aria-pressed="false">Lighting Reality</button>
             <button type="button" class="skill" data-skill="simulink" aria-pressed="false">MATLAB / Simulink</button>
             <button type="button" class="skill" data-skill="ltspice" aria-pressed="false">LTspice</button>
-            <button type="button" class="skill" data-skill="lightingreality" aria-pressed="false">Lighting Reality</button>
           </div>
         </div>
-        <div class="skill-group">
-          <h3>Embedded</h3>
+        <div class="skill-group reveal" data-reveal="rise" style="--d:.12s">
+          <h3>Standards</h3>
+          <div class="chips">
+            <button type="button" class="skill" data-skill="bs5489" aria-pressed="false">BS 5489-1</button>
+            <button type="button" class="skill" data-skill="bs13201" aria-pressed="false">BS EN 13201</button>
+          </div>
+        </div>
+        <div class="skill-group reveal" data-reveal="rise" style="--d:.18s">
+          <h3>Embedded and software</h3>
           <div class="chips">
             <button type="button" class="skill" data-skill="c" aria-pressed="false">C / C++</button>
             <button type="button" class="skill" data-skill="espidf" aria-pressed="false">ESP-IDF</button>
             <button type="button" class="skill" data-skill="freertos" aria-pressed="false">FreeRTOS</button>
             <button type="button" class="skill" data-skill="matter" aria-pressed="false">Matter</button>
             <button type="button" class="skill" data-skill="softconsole" aria-pressed="false">SoftConsole / Libero</button>
+            <button type="button" class="skill" data-skill="git" aria-pressed="false">Git</button>
           </div>
         </div>
-        <div class="skill-group">
+        <div class="skill-group reveal" data-reveal="rise" style="--d:.24s">
           <h3>Lab and test</h3>
           <div class="chips">
             <button type="button" class="skill" data-skill="esd" aria-pressed="false">ESD testing</button>
             <button type="button" class="skill" data-skill="debug" aria-pressed="false">PCB debugging</button>
-            <button type="button" class="skill" data-skill="soldering" aria-pressed="false">Advanced soldering (0402)</button>
             <button type="button" class="skill" data-skill="scope" aria-pressed="false">Oscilloscope measurement</button>
+            <button type="button" class="skill" data-skill="soldering" aria-pressed="false">Advanced soldering</button>
           </div>
         </div>
-        <div class="skill-group">
-          <h3>Standards and tools</h3>
+        <div class="skill-group reveal" data-reveal="rise" style="--d:.3s">
+          <h3>Professional</h3>
           <div class="chips">
-            <button type="button" class="skill" data-skill="bs5489" aria-pressed="false">BS 5489-1</button>
-            <button type="button" class="skill" data-skill="bs13201" aria-pressed="false">BS EN 13201</button>
-            <button type="button" class="skill" data-skill="git" aria-pressed="false">Git</button>
+            <button type="button" class="skill" data-skill="comms" aria-pressed="false">Client communication</button>
+            <button type="button" class="skill" data-skill="rep" aria-pressed="false">Representation and advocacy</button>
+            <button type="button" class="skill" data-skill="mentor" aria-pressed="false">Mentoring</button>
+            <button type="button" class="skill" data-skill="present" aria-pressed="false">Presenting</button>
           </div>
         </div>
       </div>
@@ -471,40 +460,40 @@
   <!-- ============================ LEADERSHIP ============================ -->
   <section id="leadership" aria-labelledby="lead-title">
     <div class="wrap">
-      <p class="eyebrow reveal">Leadership and community</p>
-      <h2 id="lead-title" class="reveal" style="--d:.06s">Representing, mentoring and collaborating.</h2>
-      <p class="lead reveal" style="--d:.12s">Engineering is a team activity. These roles are where I have practised leading, listening and working with people from different backgrounds.</p>
+      <p class="eyebrow reveal"><span class="eb-n">05</span>Leadership and outreach</p>
+      <h2 id="lead-title" class="split">Representing students and supporting the next generation.</h2>
+      <p class="lead reveal">Roles where I have led, listened and worked with people from different backgrounds.</p>
 
       <ul class="roles">
-        <li class="role-card reveal">
+        <li class="role-card featured reveal" data-reveal="card" id="r-school" data-skills="rep present">
+          <span class="r-tag">Representation</span>
+          <h3>School Rep</h3>
+          <p class="r-org">School of Engineering and Physical Sciences, Aston University</p>
+          <p>Represented students from every engineering and physical sciences course at Aston. I sat in meetings with academic staff and faculty leadership, raising the issues students brought to me, from day-to-day course concerns to more serious matters affecting their education, and followed each one through to an outcome that was reported back to students.</p>
+          <p class="r-skills">Leadership &middot; Advocacy &middot; Working with senior staff</p>
+        </li>
+        <li class="role-card reveal" data-reveal="card" style="--d:.06s" id="r-geep" data-skills="mentor">
           <span class="r-tag">Mentoring</span>
           <h3>Mentor, GEEP</h3>
           <p class="r-org">Royal Academy of Engineering</p>
           <p>Mentor on the Graduate Engineering Engagement Programme, which supports engineering students from under-represented backgrounds into engineering careers. I give one-to-one career guidance to a student as they move towards industry.</p>
           <p class="r-skills">Mentoring &middot; Communication &middot; Career guidance</p>
         </li>
-        <li class="role-card reveal" style="--d:.06s">
-          <span class="r-tag">Representation</span>
-          <h3>School Rep</h3>
-          <p class="r-org">Engineering and Physical Sciences, Aston University</p>
-          <p>Represented students from across the school, bringing their concerns to academic staff and feeding back the outcome.</p>
-          <p class="r-skills">Leadership &middot; Advocacy &middot; Liaison</p>
-        </li>
-        <li class="role-card reveal" style="--d:.12s">
+        <li class="role-card reveal" data-reveal="card" style="--d:.12s" id="r-course" data-skills="rep">
           <span class="r-tag">Representation</span>
           <h3>Student Rep</h3>
           <p class="r-org">Electrical and Electronic Engineering, Aston University</p>
-          <p>Course-level voice for Electrical and Electronic Engineering students, acting as the link between the cohort and staff.</p>
+          <p>Course-level voice for Electrical and Electronic Engineering students, acting as the link between the cohort and teaching staff.</p>
           <p class="r-skills">Leadership &middot; Listening &middot; Liaison</p>
         </li>
-        <li class="role-card reveal" style="--d:.18s">
+        <li class="role-card reveal" data-reveal="card" style="--d:.18s" id="r-stem" data-skills="present mentor">
           <span class="r-tag">Outreach</span>
           <h3>STEM Ambassador</h3>
           <p class="r-org">Renishaw</p>
           <p>Delivered engineering demonstrations and a careers talk to visiting school groups, explaining why STEM subjects matter.</p>
           <p class="r-skills">Public speaking &middot; Outreach &middot; Explaining technical ideas</p>
         </li>
-        <li class="role-card reveal" style="--d:.24s">
+        <li class="role-card reveal" data-reveal="card" style="--d:.24s" id="r-ecn" data-skills="present">
           <span class="r-tag">Teamwork</span>
           <h3>Early Careers Network Challenge</h3>
           <p class="r-org">Renishaw, placed 2nd of 8 teams</p>
@@ -518,10 +507,10 @@
   <!-- ============================ CONTACT ============================ -->
   <section id="contact" class="contact" aria-labelledby="contact-title">
     <div class="wrap">
-      <p class="eyebrow reveal">Contact</p>
-      <h2 id="contact-title" class="reveal" style="--d:.06s">Get in touch</h2>
-      <p class="lead reveal" style="--d:.12s">If you would like to talk about any of this work, or about engineering, email is the quickest way to reach me.</p>
-      <div class="cta reveal" style="--d:.18s">
+      <p class="eyebrow reveal"><span class="eb-n">06</span>Contact</p>
+      <h2 id="contact-title" class="split">Get in touch</h2>
+      <p class="lead reveal">If you would like to talk about any of this work, or about engineering, email is the quickest way to reach me.</p>
+      <div class="cta reveal" data-reveal="rise">
         <a class="btn primary" href="#contact" data-mail id="mailLink">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span id="mailtext">ismail.h2589 [at] gmail.com</span></a>
         <button class="btn" type="button" id="copyMail" hidden>

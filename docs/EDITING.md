@@ -3,7 +3,7 @@
 All content is in `index.html`. After any edit run `python3 -m pytest tests -q`.
 
 ## Change text
-Search `index.html` for the sentence and edit it. Keep copy short and plain. Avoid em dashes (a test checks).
+Search `index.html` for the sentence and edit it. Keep copy short and plain. Avoid em dashes (a test checks). Phrases that were deliberately removed are listed in `REMOVED` in `tests/test_content.py`, so they cannot creep back in.
 
 ## Add a project
 Copy a whole `<article class="card reveal" ...>` block in the `#work` section, then change:
@@ -18,6 +18,18 @@ Add `<button type="button" class="skill" data-skill="key" aria-pressed="false">L
 
 ## Add a role or credential
 Copy a `<li class="role-card reveal">` (Leadership) or `<li class="reveal">` (credentials). Update the Highlights number ("leadership, mentoring and outreach roles") if the count changes, and the `data-count`.
+
+## Add a profile photo
+Save a square-ish, well-lit head-and-shoulders photo as `assets/img/portrait.jpg` (about 800x1000 px, under 200 KB). In `index.html`, add this as the first child of `<aside class="glance">` in the About section:
+
+```html
+<img class="portrait" src="assets/img/portrait.jpg" width="800" height="1000" alt="Ismail Hussain">
+```
+
+and add to `css/site.css`: `.portrait { width: 100%; border-radius: 14px; margin-bottom: 1.2rem; }`.
+
+## Update the share image
+Edit `TITLE` / `LINE` in `tools/build_og.py`, run `python3 tools/build_og.py`.
 
 ## Update the CV
 Edit the content block at the top of `tools/build_cv.py`, then `python3 tools/build_cv.py`. The script writes `assets/docs/Ismail-Hussain-CV.pdf` (must stay one page; a test checks).

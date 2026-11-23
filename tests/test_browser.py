@@ -29,8 +29,17 @@ def test_nav_links_scroll_to_sections(page):
         assert (-5 <= top <= 140) or at_bottom, (sid, top)
 
 
+def test_opens_in_dark_even_when_system_is_light(browser, base_url):
+    ctx = browser.new_context(color_scheme="light")
+    p = ctx.new_page(); p.goto(base_url)
+    assert p.evaluate("document.documentElement.dataset.theme") == "dark"
+    assert p.get_attribute("#themeBtn", "aria-label") == "Switch to light theme"
+    ctx.close()
+
+
 def test_theme_toggle_persists(page):
     start = page.evaluate("document.documentElement.dataset.theme")
+    assert start == "dark"
     page.click("#themeBtn")
     now = page.evaluate("document.documentElement.dataset.theme")
     assert now != start
@@ -152,7 +161,8 @@ def test_no_js_fallback(browser, base_url):
     p = ctx.new_page(); p.goto(base_url)
     assert p.locator(".reveal").first.is_visible()
     assert p.locator("#drop-pec").evaluate("e => e.getBoundingClientRect().height") > 100
-    assert "power electronics" in p.inner_text(".role-static")
+    assert "Graduate Electrical Engineer" in p.inner_text(".role")
+    assert p.locator(".split").first.inner_text() == "Engineering from first idea to final delivery."
     ctx.close()
 
 
@@ -169,3 +179,56 @@ def test_axe_wcag(page, theme):
     res = Axe().run(page, options={"runOnly": {"type": "tag", "values": ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "best-practice"]}})
     msgs = [f"{v['id']}: {v['help']} -> {[n['target'] for n in v['nodes']][:3]}" for v in res.response["violations"]]
     assert msgs == [], "\n".join(msgs)
+
+
+def test_text_splitting_keeps_text_and_accessible_name(page):
+    assert page.get_attribute("#hero-title", "aria-label") == "Ismail Hussain"
+    assert page.locator("#hero-title .ch").count() == len("IsmailHussain")
+    assert page.locator("#about-title").inner_text() == "Engineering from first idea to final delivery."
+    assert page.locator(".scrub .sw").count() > 20
+    assert page.locator(".scrub .sw:not(.lit)").count() == 0      # reduced motion: fully shown
+
+
+@pytest.fixture()
+def motion(browser, base_url):
+    ctx = browser.new_context(viewport={"width": 1440, "height": 900}, reduced_motion="no-preference")
+    pg = ctx.new_page(); pg.errors = []
+    pg.on("pageerror", lambda e: pg.errors.append(str(e)))
+    pg.goto(base_url, wait_until="load")
+    yield pg
+    ctx.close()
+
+
+def test_scroll_animations_progress(motion):
+    p = motion
+    assert p.locator("#work .split.in").count() == 0
+    p.wait_for_timeout(1600)
+    grad = p.evaluate("[...document.querySelectorAll('.hero-name .grad .ch')].map(c => c.style.getPropertyValue('--x'))")
+    assert len(set(grad)) == len(grad) > 3                         # gradient offset per letter
+    m0 = p.evaluate("getComputedStyle(document.querySelector('.marquee-track')).transform")
+    p.evaluate("document.getElementById('about').scrollIntoView()"); p.wait_for_timeout(600)
+    lit_mid = p.locator(".scrub .sw.lit").count()
+    m1 = p.evaluate("getComputedStyle(document.querySelector('.marquee-track')).transform")
+    assert m0 != m1                                                # marquee moves
+    assert float(p.evaluate("getComputedStyle(document.getElementById('heroInner')).opacity")) < 0.2
+    p.evaluate("document.getElementById('experience').scrollIntoView()"); p.wait_for_timeout(900)
+    assert p.locator(".scrub .sw.lit").count() >= lit_mid
+    prog = p.evaluate("document.getElementById('tProgress').style.getPropertyValue('--p')")
+    assert prog and float(prog.rstrip('%')) > 0
+    assert p.locator("#experience .split.in").count() == 1
+    p.evaluate("window.scrollTo(0, document.body.scrollHeight)"); p.wait_for_timeout(1200)
+    assert float(p.evaluate("document.getElementById('tProgress').style.getPropertyValue('--p')").rstrip('%')) == 100
+    assert p.locator(".t-item.lit").count() == 3
+    assert p.locator("#x-amey.in .flow li").count() == 6
+    assert p.errors == [], p.errors
+
+
+def test_all_sections_reveal_after_full_scroll(motion):
+    p = motion
+    h = p.evaluate("document.documentElement.scrollHeight")
+    for y in range(0, h, 500):
+        p.evaluate(f"window.scrollTo(0,{y})"); p.wait_for_timeout(60)
+    p.wait_for_timeout(1300)
+    assert p.locator(".reveal:not(.in), .split:not(.in)").count() == 0
+    opac = p.evaluate("[...document.querySelectorAll('.reveal')].filter(e => +getComputedStyle(e).opacity < .99).length")
+    assert opac == 0

@@ -1,6 +1,13 @@
 # Ismail Hussain: portfolio
 
-Personal portfolio site, live at **https://ismail-h01.github.io**. Plain HTML, CSS and JavaScript: no framework, no build step, no trackers. Hosted free on GitHub Pages.
+Personal portfolio site, live at **https://ismail-h01.github.io**, in two editions:
+
+| Edition | URL | Send it for | Notes |
+|---|---|---|---|
+| Engineering | `ismail-h01.github.io` | Design, electrical and electronics roles | Teal palette. Projects, PDFs, galleries. Indexed by search engines. |
+| Sales | `ismail-h01.github.io/sales/` | Sales, sales engineering, account management | Gold palette. Evidence-led "What I bring", commercial outcomes, sales CV. **Unlisted**: `noindex`, not in the sitemap, and not linked from the engineering page. It links back to the engineering page for technical depth. |
+
+Both share `css/site.css` and `js/site.js`; the sales edition adds `css/sales.css`. Plain HTML, CSS and JavaScript: no framework, no build step, no trackers. Hosted free on GitHub Pages.
 
 ## Structure
 
@@ -13,7 +20,10 @@ robots.txt, sitemap.xml, .nojekyll
 assets/img/           Photos, figures, favicons, social share image
 assets/docs/          CV (PDF) and the EE3PEC paper (PDF)
 tools/build_cv.py     Regenerates the CV PDF
-tools/build_og.py     Regenerates the 1200x630 share image
+tools/build_cv_sales.py  Regenerates the web-safe sales CV PDF
+tools/build_og.py     Regenerates both 1200x630 share images
+sales/index.html      Sales edition
+css/sales.css         Sales palette and components
 tests/                pytest + Playwright + axe tests
 docs/                 EDITING.md and CONTENT-SOURCES.md
 .github/workflows/    CI: runs the tests on every push

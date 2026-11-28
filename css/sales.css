@@ -1,0 +1,88 @@
+/* ==========================================================================
+   Sales edition (sales/index.html). Loaded after site.css: same structure and
+   motion system, with a warmer, commercial palette and a few extra components.
+   ========================================================================== */
+
+.sales[data-theme="dark"] {
+  --bg: #0b0f1a;
+  --bg-2: #121827;
+  --surface: #141b2b;
+  --surface-2: #1a2236;
+  --text: #f3f1ec;
+  --muted: #a9b0c0;
+  --accent: #f4b740;
+  --accent-2: #ff8a5c;
+  --accent-ink: #1f1400;
+  --warn: #f4b740;
+}
+.sales[data-theme="light"] {
+  --bg: #fbf9f5;
+  --bg-2: #f3eee5;
+  --surface: #ffffff;
+  --surface-2: #f7f3ec;
+  --text: #17140f;
+  --muted: #5b5446;
+  --accent: #8f5500;
+  --accent-2: #b8401a;
+  --accent-ink: #ffffff;
+  --warn: #8f5500;
+  --shadow: 0 14px 40px rgba(60, 40, 10, .10);
+}
+.sales .hero { background: radial-gradient(110% 80% at 85% 0%, color-mix(in srgb, var(--accent-2) 15%, transparent), transparent 60%), radial-gradient(70% 60% at 0% 100%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 60%), var(--bg); }
+.sales #traces { opacity: .45; }
+
+/* "open to roles" status in the hero badge */
+.open { display: inline-flex; align-items: center; gap: .45rem; color: var(--text); font-weight: 600; }
+.open i { width: 8px; height: 8px; border-radius: 50%; background: #3ddc84; box-shadow: 0 0 0 0 rgba(61, 220, 132, .6); animation: live 2s infinite; }
+@keyframes live { 70% { box-shadow: 0 0 0 9px rgba(61, 220, 132, 0); } 100% { box-shadow: 0 0 0 0 rgba(61, 220, 132, 0); } }
+.sales .stat .n-word { font-size: clamp(1.7rem, 3vw, 2.3rem); }
+
+/* ---------- what I bring ---------- */
+.value { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; counter-reset: v; }
+.v-card { counter-increment: v; position: relative; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); padding: 1.7rem 1.6rem 1.5rem; overflow: hidden; transition: transform .4s var(--ease), border-color .3s, box-shadow .3s; }
+.v-card::after { content: counter(v, decimal-leading-zero); position: absolute; top: 1rem; right: 1.2rem; font-size: 2.6rem; font-weight: 800; letter-spacing: -.04em; color: var(--text); opacity: .06; }
+.v-card::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); transform: scaleX(0); transform-origin: left; transition: transform .6s var(--ease); }
+.v-card:hover { transform: translateY(-5px); border-color: color-mix(in srgb, var(--accent) 60%, transparent); box-shadow: var(--shadow); }
+.v-card:hover::before, .js .v-card.in::before { transform: scaleX(1); }
+.js .v-card.in::before { transition-delay: calc(.4s + var(--d, 0s)); }
+.v-ico { display: grid; place-items: center; width: 2.9rem; height: 2.9rem; border-radius: 12px; background: color-mix(in srgb, var(--accent) 16%, transparent); color: var(--accent); margin-bottom: 1.1rem; }
+.v-card h3 { font-size: 1.25rem; margin-bottom: .7rem; }
+.v-card p { color: var(--muted); font-size: .97rem; line-height: 1.6; }
+.v-card .v-ev { margin: auto 0 0; padding-top: .9rem; border-top: 1px dashed var(--line); font-size: .9rem; }
+.v-ev b { color: var(--accent); }
+
+/* ---------- experience extras ---------- */
+.sales .flow { grid-template-columns: repeat(5, 1fr); }
+.outcome { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin: 1.2rem 0 0; padding: .55rem .95rem; border-radius: 999px; background: color-mix(in srgb, var(--accent) 13%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent); color: var(--text); font-weight: 600; font-size: .92rem; }
+.outcome b { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-ink); background: var(--accent); padding: .15rem .5rem; border-radius: 999px; }
+
+/* ---------- technical credibility band ---------- */
+#depth { padding-top: 0; }
+.depth { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: center; padding: clamp(1.8rem, 4vw, 3rem); border-radius: calc(var(--radius) + 6px); border: 1px solid var(--line); background: radial-gradient(90% 120% at 100% 0%, color-mix(in srgb, var(--accent-2) 14%, transparent), transparent 60%), var(--surface); box-shadow: var(--shadow); }
+.depth h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); max-width: 18ch; }
+.depth p { color: var(--muted); max-width: 52ch; }
+.depth-list { margin: 0; display: grid; gap: .9rem; }
+.depth-list div { padding: .9rem 1rem; border-radius: 12px; background: var(--surface-2); border: 1px solid var(--line); }
+.depth-list dt { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+.depth-list dd { margin: .2rem 0 0; font-size: .95rem; }
+
+@media (max-width: 1000px) {
+  .value { grid-template-columns: repeat(2, 1fr); }
+  .sales .flow { grid-template-columns: repeat(3, 1fr); }
+  .sales .flow li:nth-child(3)::after { display: none; }
+}
+@media (max-width: 760px) {
+  .value, .depth { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .sep-open { display: none; }
+  .open { flex-basis: 100%; }
+  .sales .flow { grid-template-columns: repeat(2, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v-card::before { transform: scaleX(1); }
+}
+@media print {
+  .open i { display: none; }
+  .depth .btn { display: none; }
+}

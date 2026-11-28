@@ -42,3 +42,6 @@ Variables are at the top of `css/site.css` (`:root` for dark, `[data-theme="ligh
 
 ## Domain
 The site URL is `https://ismail-h01.github.io/`. If it changes, update the canonical, Open Graph, JSON-LD, `robots.txt` and `sitemap.xml`.
+
+## Sales edition
+Edit `sales/index.html`; colours and extra components are in `css/sales.css`. Keep it evidence-led: every skill card ends with a concrete example. Regenerate the CV with `cd tools && python3 build_cv_sales.py`. Never add the sales page to `sitemap.xml` or link to it from `index.html` (a test checks both).

@@ -23,3 +23,15 @@ Used to check the page against primary documents. "Report" means the final year 
 | GEEP mentor; programme description | Stated by Ismail; programme described on the Royal Academy of Engineering GEEP pages |
 
 Unverified items to confirm: that Ismail works on both Section 38 and Section 278 schemes (the page says he does); location wording "West Midlands, UK".
+
+## Sales edition (sales/index.html and the sales CV PDF)
+
+Source: Ismail's sales-targeted CV (Nov 2026), which is a private document, plus facts he has stated directly (Best-One store work in 2021, open to relocation). The public page and PDF are a web-safe rewrite:
+
+- Internal production details and internal sales rankings from the private CV are left out. The RESOLUTE test-board point is worded as "led the redesign ... reducing a risk to production", because the redesign reached board testing but was not deployed.
+- The Renishaw role is shown as "Electronics Engineer (placement year), 2024 to 2025".
+- Best-One (2021) is added for face-to-face customer experience.
+- Public product names (RESOLUTE, ATOM, TONiC, ADT) are on Renishaw's website and are kept.
+- No phone number is published.
+
+`tests/test_sales.py` checks the page and the PDF against general patterns (classification labels, equipment counts, sales rankings, phone numbers), so private wording never has to be written into this public repo.

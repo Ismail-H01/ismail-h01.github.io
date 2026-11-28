@@ -116,7 +116,7 @@
     nav.classList.toggle('scrolled', y > 8);
     toTop.hidden = y < 700;
 
-    if (!reduced) {
+    if (!reduced && heroInner && canvasEl) {
       // Hero drifts up and fades as the page scrolls away from it.
       if (y < vh * 1.2) {
         heroInner.style.transform = 'translate3d(0,' + (y * 0.32).toFixed(1) + 'px,0)';
@@ -211,7 +211,9 @@
   });
 
   /* ---------- lightbox ---------- */
-  var lb = $('#lb'), lbImg = $('#lbImg'), lbCap = $('#lbCap'), lbPrev = $('#lbPrev'), lbNext = $('#lbNext'), lbClose = $('#lbClose');
+  var lb = $('#lb');
+  if (lb) (function () {
+  var lbImg = $('#lbImg'), lbCap = $('#lbCap'), lbPrev = $('#lbPrev'), lbNext = $('#lbNext'), lbClose = $('#lbClose');
   var group = [], gi = 0, opener = null;
   function showLb() {
     var b = group[gi];
@@ -251,6 +253,7 @@
       f[(i + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus();
     }
   });
+  })();
 
   /* ---------- skills: show where each was used ---------- */
   var skillOut = $('#skillOut'), skillBtns = $$('.skill'), sources = $$('[data-skills]');
